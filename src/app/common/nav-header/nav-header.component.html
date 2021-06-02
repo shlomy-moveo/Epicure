@@ -1,11 +1,13 @@
-<div>
-        <img src=""  class="logo"> 
-        <span class="epicure" >EPICURE</span>
-        <a class="restaurants" >Restaurants</a>
-        <a class="chefs">Chefs</a>
-        <app-search-input></app-search-input>
-        <div class="icons">
-            <img class="User-icon">
-            <img class="Bag-icon">
-        </div>
+<div class="header">
+    <div class="left-group">
+        <img src="../../../assets/logo@3x.png" class="logo">
+        <span class="EPICURE" >EPICURE</span>
+        <a class="Restaurants" >Restaurants</a>
+        <a class="Chefs">Chefs</a>
+    </div>
+    <div class="right-group">
+        <app-search-input [header]="true"></app-search-input>
+            <img src="../../../assets/user-icon.svg" class="User-icon">
+            <img src="../../../assets/bag-icon.svg" class="Bag-icon">
+    </div>
 </div>

@@ -13,6 +13,10 @@ import { SearchInputComponent } from './components/search-input/search-input.com
 import { IntroSectionComponent } from './components/intro-section/intro-section.component';
 import { MainSectionComponent } from './components/main-section/main-section.component';
 import { IconsMeaningComponent } from './components/icons-meaning/icons-meaning.component';
+import { HomepageComponent } from './pages/homepage/homepage.component';
+import { RestaurantsComponent } from './components/restaurants/restaurants.component';
+import { SignDishComponent } from './components/sign-dish/sign-dish.component';
+import { MiniCardComponent } from './components/mini-card/mini-card.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,11 @@ import { IconsMeaningComponent } from './components/icons-meaning/icons-meaning.
     SearchInputComponent,
     IntroSectionComponent,
     MainSectionComponent,
-    IconsMeaningComponent
+    IconsMeaningComponent,
+    HomepageComponent,
+    RestaurantsComponent,
+    SignDishComponent,
+    MiniCardComponent
   ],
   imports: [
     BrowserModule,

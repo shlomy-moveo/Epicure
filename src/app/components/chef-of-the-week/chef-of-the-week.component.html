@@ -1,8 +1,8 @@
-    <div>
-        <p>CHEF OF THE WEEK :</p>
+    <div class="chef-weekly-container">
+        <h2>CHEF OF THE WEEK :</h2>
         <div class="chef-content">
             <div class="pic">
-                <div>Yossi Shitrit</div>
+                <div class="chef-name">Yossi Shitrit</div> 
             </div>
             <p class="description">Chef Yossi Shitrit has been living and breathing his culinary dreams for more than
                 two
@@ -13,18 +13,12 @@
                 every dish.</p>
         </div>
         <div class="chef-restaurants">
-            <p>Yossi's restaurants :</p>
-                <div class="card">
-                    <app-card>
-                    </app-card>
+            <h3>Yossi's restaurants :</h3>
+            <div class="cards">
+                <div *ngFor="let resturant of yossi_resturants" class="card">
+                    <app-mini-card [resturant_details]="resturant">
+                    </app-mini-card>
                 </div>
-                <div class="card">
-                    <app-card>
-                    </app-card>
-                </div>
-                <div class="card">
-                    <app-card >
-                    </app-card>
                 </div>
         </div>
     </div>

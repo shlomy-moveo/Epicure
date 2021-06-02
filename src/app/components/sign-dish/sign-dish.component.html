@@ -1,0 +1,12 @@
+<div class="dishes-content">
+<h2 >SIGNATURE DISH OF :</h2>
+<div class="cards">
+    <div *ngFor="let restaurant of signDishes">
+
+    <p class="title">{{restaurant.name}}</p>
+    <app-card [resturant_details]="restaurant">
+    </app-card>
+</div>
+</div>
+
+</div>
