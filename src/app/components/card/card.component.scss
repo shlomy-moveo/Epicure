@@ -1,20 +1,22 @@
 @import '../../../styles.scss';
 
-.card{
-    background-color: #f9f4ea;
-    width: 360px;
-    font-family: $font-stack;
-    margin-right: 11px;
+.desktop{
 
+    .card{
+        background-color: #f9f4ea;
+        width: 360px;
+        font-family: $font-stack;
+        margin-right: 11px;
+        
         img{
             width: 360px;
         }   
-
+        
         .details{
             text-align: center;
             align-items: center;
             background-color: #f9f4ea;
-
+            
             .title{
                 @extend %card-title;
             }
@@ -25,7 +27,7 @@
             .dish{
                 width:201px;      
             }
-
+            
             .sub-title{
                 @extend %card-sub-title;
             }
@@ -36,7 +38,7 @@
             .products{
                 height: 154.8px;
             }
-
+            
             .dishContent{
                 height: 90px;
                 
@@ -53,7 +55,7 @@
                         font-family: $font-stack;
                         font-size: 24.9px;
                     }
-
+                    
                     .line{
                         margin: 2px;
                         width: 112px;
@@ -63,7 +65,83 @@
                 }
                 
             }
-                
-         
+            
+            
         }
- }
+    }
+}
+
+.mobile{
+
+    .card{
+        background-color: #f7e0b2;
+        width: 206px;
+        height: 338px;
+
+        font-family: $font-stack;
+        // margin-right: 11px;
+        
+        img{
+            width: 206px;
+        }   
+        
+        .details{
+            text-align: center;
+            align-items: center;
+            background-color: #f7e0b2;
+            
+            .title{
+                @extend %card-title-mobile;
+            }
+            
+            .restaurant{
+                padding-top: 25px;
+                height: 29px;
+            }
+            .dish{
+                width:201px;      
+            }
+            
+            .sub-title{
+                @extend %card-sub-title-mobile;
+            }
+            
+            .chef{
+                height: 23px;
+                padding-bottom: 12px;
+            }
+            .products{
+                height: 154.8px;
+            }
+            
+            .dishContent{
+                height: 90px;
+                
+                img{
+                    max-height: 30px; 
+                }
+                .price{  
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    p{
+                        height: 29px;
+                        font-family: $font-stack;
+                        font-size: 24.9px;
+                    }
+                    
+                    .line{
+                        margin: 2px;
+                        width: 112px;
+                        height: 1px;
+                        border: solid 0.4px #979797;
+                    }
+                }
+                
+            }
+            
+            
+        }
+    }
+}

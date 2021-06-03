@@ -1,7 +1,7 @@
 @import '../../../styles.scss';
 
 
-
+.desktop{
 .header{
     display: flex;
     height: 53px;
@@ -13,7 +13,7 @@
       .logo {
         height: 33px;
         margin: 0 0 1px 0;
-        object-fit: contain;
+        
       }
       
         .EPICURE {
@@ -49,22 +49,61 @@
         margin: 7px 28px 4px;
         object-fit: contain;
       }
-      
-
-      
         .Bag-icon {
         height: 22px;
         margin: 7px 0 5px 0;
         object-fit: contain;
       }
-      
+    }
+  }
+}
+
+.mobile{
+
+  .header{
+    display: flex;
+    height: 53px;
+    padding: 0 20px;
+    justify-content: space-between;
+    
+    .left-group{
+      display: flex;
+      .logo {
+        height: 33px;
+        margin: 8px 0 1px 122px;
+        position: absolute;
+         right: 50%;
+      }
     }
     
-  }
+    .right-group{
+      display: flex;
 
-  @media screen and (max-width: 1200px) {
-    .header{
-      padding: 14px 23px 5px;
+      app-search-input{
+        display: none;
+      }
+
+      .Search-icon{
+        height: 18px;
+        margin: 17px 0 5px 0px;
+      }
+      
+        .User-icon {
+        height: 18px;
+        margin: 17px 26px 4px;
+      }
+        .Bag-icon {
+        height: 18px;
+        margin: 17px 0 5px 0;
+      }
     }
   }
+
+}
+
+  // @media screen and (max-width: 1200px) {
+  //   .header{
+  //     padding: 14px 23px 5px;
+  //   }
+  // }
     

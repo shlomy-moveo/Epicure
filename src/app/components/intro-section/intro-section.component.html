@@ -1,8 +1,12 @@
-    <!-- <div class="intro-container"> -->
+<div ngClass.lt-md="mobile" ngClass.gt-sm="desktop">
         <div class="hero-pic"> 
             <div class="box-rectangle">
                 <h1 class="description">Epicure works with the top chef restaurants in Tel Aviv</h1>
                 <app-search-input [header]="false"></app-search-input>
             </div>
         </div>
-    <!-- </div> -->
+        <div class="buttons" fxHide.gt-sm>
+            <a class="button">CHEFS</a>
+            <a class="button">RESTURANTS</a>
+        </div>
+</div>

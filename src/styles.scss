@@ -7,7 +7,7 @@ $font-stack: 'HelveticaNeue-Thin';
     background-color: rgba(255, 255, 255, 0.11);
     background-image: url('./assets/search-icon.svg');
     background-repeat: no-repeat;
-    background-size: 22px 22px;
+    background-size: 16px 16px;
   }
 
   %input-placeholder {
@@ -22,11 +22,23 @@ $font-stack: 'HelveticaNeue-Thin';
     font-family: 'Helvetica Neue', sans-serif;
     font-size: 40px
   }
+  %card-title-mobile {
+    margin: auto;
+    letter-spacing: 1.67px;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 25px
+  }
 
   %card-sub-title {
     font-size: 25px;
     font-weight: 100;
     margin: 20px 0 0 0 ;
+    letter-spacing: 1.67px;
+  }
+  %card-sub-title-mobile {
+    font-size: 20px;
+    font-weight: 100;
+    margin: 4px 0 0 0 ;
     letter-spacing: 1.67px;
   }
 
@@ -36,4 +48,13 @@ $font-stack: 'HelveticaNeue-Thin';
     font-family: $font-stack;
     text-align: center;
     letter-spacing: 1.25px;
+  }
+
+  %h2-title-mobile{
+    font-size: 14px;
+    font-weight: 100;
+    font-family: $font-stack;
+    text-align: center;
+    letter-spacing: 0.93px;
+
   }

@@ -1,8 +1,9 @@
 <div class="dishes-content">
 <h2 >SIGNATURE DISH OF :</h2>
-<div class="cards">
+<div class="cards" 
+fxLayout="row wrap"
+>
     <div *ngFor="let restaurant of signDishes">
-
     <p class="title">{{restaurant.name}}</p>
     <app-card [resturant_details]="restaurant">
     </app-card>

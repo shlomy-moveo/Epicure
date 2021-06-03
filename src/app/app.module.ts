@@ -18,6 +18,9 @@ import { RestaurantsComponent } from './components/restaurants/restaurants.compo
 import { SignDishComponent } from './components/sign-dish/sign-dish.component';
 import { MiniCardComponent } from './components/mini-card/mini-card.component';
 
+import { FlexLayoutModule } from '@angular/flex-layout';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,11 +37,13 @@ import { MiniCardComponent } from './components/mini-card/mini-card.component';
     HomepageComponent,
     RestaurantsComponent,
     SignDishComponent,
-    MiniCardComponent
+    MiniCardComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FlexLayoutModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
