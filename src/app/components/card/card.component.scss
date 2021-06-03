@@ -76,13 +76,16 @@
     .card{
         background-color: #f7e0b2;
         width: 206px;
-        height: 338px;
+        height: 224px;
+        margin: 14px;
+        
 
         font-family: $font-stack;
         // margin-right: 11px;
         
         img{
             width: 206px;
+            
         }   
         
         .details{

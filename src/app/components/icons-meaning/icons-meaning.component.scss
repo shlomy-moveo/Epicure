@@ -1,38 +1,90 @@
 @import '../../../styles.scss';
 
-.icons-meaning-container {
-    font-family: $font-stack;
-    height: 265px;
-    background-color: #fafafa;
-    margin-top: 87px;
+.desktop{
 
-
-    h2{
-        @extend %h2-title;
-        height: 35px;
-        padding: 24px;
-
-    }
-
-    .icons{
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        text-align: center;
+    .icons-meaning-container {
+        font-family: $font-stack;
+        height: 265px;
+        background-color: #fafafa;
+        margin-top: 87px;
         
-        .icon{
-            width: 12%;
-
-            img{
-                height: 67px;
-                        }
-
-            .icon-title{
-                width: 100%;
-                justify-content: center;
-                font-size: 25.2px;
-                font-weight: 100;
-            }
+        
+        h2{
+            @extend %h2-title;
+            height: 35px;
+            padding: 24px;
+            
         }
-    }  
+        
+        .icons{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            text-align: center;
+            
+            .icon{
+                width: 12%;
+                
+                img{
+                    height: 67px;
+                }
+                
+                .icon-title{
+                    width: 100%;
+                    justify-content: center;
+                    font-size: 25.2px;
+                    font-weight: 100;
+                }
+            }
+        }  
+    }
+}
+
+
+.mobile{
+
+    .icons-meaning-container {
+        font-family: $font-stack;
+        height: 134px;
+        background-color: #fafafa;
+        margin-top: 87px;
+        
+        
+        h2{
+            @extend %h2-title-mobile;
+            height: 17px;
+            padding: 24px;
+            
+        }
+        
+        .icons{
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+            text-align: center;
+            align-items: center;
+            
+            .icon{
+                display: flex;
+                  align-items: center;
+                   flex-direction: column;
+                    justify-content: center;
+                    margin-bottom: 15px;
+                
+                img{
+                    height: 24px;
+                }
+                
+                .icon-title{
+                    // width: 100%;
+                    // margin: 16px 0 0 0;
+
+                    height: 16px;
+                    justify-content: center;
+                    font-size: 13px;
+                    font-weight: 100;
+                }
+            }
+        }  
+    }
 }

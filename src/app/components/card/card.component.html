@@ -1,7 +1,9 @@
 <div ngClass.lt-md="mobile" ngClass.gt-sm="desktop">
 
 <div *ngIf="resturant_details" class="card" >
-    <img src={{resturant_details.img}}>
+    
+    <img fxHide.gt-sm src={{resturant_details.imgMobile}}> 
+    <img fxHide.lt-md src={{resturant_details.img}}> 
     <div class="details">
         <h2 class="title" [ngClass]="resturant_details.sign_dish ? 'dish' : 'restaurant'">{{resturant_details.sign_dish ? resturant_details.sign_dish.name : resturant_details.name}}</h2>
         <p class="sub-title" [ngClass]="resturant_details.sign_dish ? 'products' : 'chef'">{{resturant_details.sign_dish ? resturant_details.sign_dish.ingredients : resturant_details.chef}}</p>

@@ -12,7 +12,6 @@ export class CardComponent implements OnInit {
   @Input() resturant_details: Restaurant | undefined;
 
   ngOnInit(): void {
-
   }
 
 }
