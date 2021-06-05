@@ -11,7 +11,6 @@ import { AboutComponent } from './components/about/about.component';
 import { FooterComponent } from './common/footer/footer.component';
 import { SearchInputComponent } from './components/search-input/search-input.component';
 import { IntroSectionComponent } from './components/intro-section/intro-section.component';
-import { MainSectionComponent } from './components/main-section/main-section.component';
 import { IconsMeaningComponent } from './components/icons-meaning/icons-meaning.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { RestaurantsComponent } from './components/restaurants/restaurants.component';
@@ -32,7 +31,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FooterComponent,
     SearchInputComponent,
     IntroSectionComponent,
-    MainSectionComponent,
     IconsMeaningComponent,
     HomepageComponent,
     RestaurantsComponent,

@@ -7,13 +7,11 @@
         height: 265px;
         background-color: #fafafa;
         margin-top: 87px;
-        
-        
+          
         h2{
             @extend %h2-title;
             height: 35px;
-            padding: 24px;
-            
+            padding: 24px; 
         }
         
         .icons{
@@ -48,8 +46,8 @@
         height: 134px;
         background-color: #fafafa;
         margin-top: 87px;
-        
-        
+        padding-bottom: 22px;
+ 
         h2{
             @extend %h2-title-mobile;
             height: 17px;
@@ -60,25 +58,27 @@
         .icons{
             display: flex;
             width: 100%;
-            justify-content: space-around;
+            justify-content: center;
             text-align: center;
             align-items: center;
+
+            .icon + .icon {
+                margin-left: 60px;
+            }
+            
             
             .icon{
                 display: flex;
                   align-items: center;
                    flex-direction: column;
                     justify-content: center;
-                    margin-bottom: 15px;
                 
                 img{
                     height: 24px;
                 }
                 
                 .icon-title{
-                    // width: 100%;
-                    // margin: 16px 0 0 0;
-
+   
                     height: 16px;
                     justify-content: center;
                     font-size: 13px;

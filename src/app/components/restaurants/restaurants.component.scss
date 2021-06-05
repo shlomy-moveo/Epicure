@@ -34,12 +34,10 @@
   
 .mobile{
 
-
   .rest-content {
     width: 100%;
     display: flex;
     flex-direction: column;
-    // align-items: center;
     margin: auto; 
 
     h2 {
@@ -53,13 +51,6 @@
     .cards {
       overflow: scroll;
       display: flex;
-      margin-left: 20px;
-      // overflow: ovb;
-      // overflow: hidden;
-      // justify-content: center;
-      // justify-content: space-evenly;
-      // flex-wrap: wrap;
-  
     }
     
     .all-restaurants {
@@ -72,15 +63,5 @@
   }
 }
   
-
-
-  
-  // @media screen and (max-width: 900px) {
-    //   .cards{
-      //     flex-direction: column;
-      //     margin:auto ;
-      //     margin-top:15px ;
-      //   }
-      // }
       
       

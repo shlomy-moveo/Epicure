@@ -1,3 +1,5 @@
+<div ngClass.lt-md="mobile" ngClass.gt-sm="desktop">
+
     <div class="chef-weekly-container">
         <h2>CHEF OF THE WEEK :</h2>
         <div class="chef-content">
@@ -13,12 +15,14 @@
                 every dish.</p>
         </div>
         <div class="chef-restaurants">
-            <h3>Yossi's restaurants :</h3>
+            <h3 [ngStyle]="{'margin-bottom': 0}">Yossi's restaurants :</h3>
             <div class="cards">
-                <div *ngFor="let resturant of yossi_resturants" class="card">
-                    <app-mini-card [resturant_details]="resturant">
+                <div *ngFor="let resturant of yossi_resturants" class="card" >
+                    <app-mini-card [resturant_details]="resturant" >
                     </app-mini-card>
                 </div>
                 </div>
         </div>
+    </div>
+
     </div>
