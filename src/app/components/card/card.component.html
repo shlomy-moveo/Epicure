@@ -1,6 +1,6 @@
 <div ngClass.lt-md="mobile" ngClass.gt-sm="desktop">
 
-<div *ngIf="resturant_details" class="card">
+<div *ngIf="resturant_details" class="card" class="{{cardType}}">
     
     <img fxHide.gt-sm [ngClass]="resturant_details.sign_dish ? 'img-dish' : 'img-res'" src={{resturant_details.imgMobile}}> 
     <img fxHide.lt-md src={{resturant_details.img}}> 

@@ -17,12 +17,23 @@
         <div class="chef-restaurants">
             <h3 [ngStyle]="{'margin-bottom': 0}">Yossi's restaurants :</h3>
             <div class="cards">
+                <swiper [config]='config' class="swiper">
                 <div *ngFor="let resturant of yossi_resturants" class="card" >
                     <app-mini-card [resturant_details]="resturant" >
                     </app-mini-card>
                 </div>
+                </swiper>
                 </div>
         </div>
     </div>
 
     </div>
+    <!-- <div>
+        <swiper class="swiper-container" fxFlex="auto" [config]="config" >
+            <div *ngFor="let resturant of yossi_resturants" >
+              <div fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
+                {{resturant.name}}
+              </div>
+            </div>
+          </swiper>
+    </div> -->

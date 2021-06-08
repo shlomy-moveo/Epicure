@@ -7,11 +7,15 @@ import { Restaurant } from '../../interfaces/interface';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-  constructor() { }
-  
   @Input() resturant_details: Restaurant | undefined;
+  @Input() cardType: string ='';
+
+  constructor() { }
+ 
 
   ngOnInit(): void {
+    // debugger
+    // this.cardType
   }
 
 }

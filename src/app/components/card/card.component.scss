@@ -2,11 +2,14 @@
 
 .desktop{
 
+
+    
     .card{
         background-color: #f9f4ea;
         width: 360px;
         font-family: $font-stack;
         margin-right: 11px;
+   
         
         img{
             width: 360px;
@@ -89,13 +92,30 @@
         height: 224px;
         margin: 14px;
         font-family: $font-stack;
-        .img-res{
+
+        &.card-dish { 
+            width: 260px;
+
+            .img-dish{
+                width: 260px;
+                
+            }
+           }
+
+        &.card-restaurant {
             width: 206px;
-        }  
-        
-        .img-dish{
-            width: 206px;
+             height: 338px;
+
+            .img-res{
+                width: 206px;
+                height: 224px;
+            }
         }
+
+        // .img-res{
+        //     width: 206px;
+        // }  
+        
         
         .details{
             text-align: center;
@@ -125,8 +145,12 @@
                 padding-bottom: 12px;
             }
             .products{
+                margin: auto;
+                text-align: center;
                 height: 111.8px;
+                width: 215px;
                 font-size: 17.3px;
+                padding: 10px 0;
             }
             
             .dishContent{

@@ -5,7 +5,7 @@
 <div class="cards" >
     <div *ngFor="let restaurant of signDishes" [ngStyle]="{'margin-top': 0}">
     <p class="title" [ngStyle]="{'margin-top': 0}">{{restaurant.name}}</p>
-    <app-card [resturant_details]="restaurant">
+    <app-card [cardType]="'card-dish'" [resturant_details]="restaurant">
     </app-card>
 </div>
 </div>

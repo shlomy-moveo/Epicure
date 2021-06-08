@@ -3,10 +3,12 @@
 <div class="rest-content"> 
     <h2>THE POPULAR RESTAURANTS IN EPICURE :</h2>
     <div class="cards">
+        <swiper [config]='config' class="swiper">
         <div *ngFor="let resturant of popular_resturants">
-            <app-card [resturant_details]="resturant">
+            <app-card [cardType]="'card-restaurant'" [resturant_details]="resturant">
             </app-card>
         </div>
+        </swiper>
     </div>
     <a fxHide.lt-md class="all-restaurants">All Restaurants  <img src="../../../assets/all-restaurants-arrows.svg"></a>
 </div>
