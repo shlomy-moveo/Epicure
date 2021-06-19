@@ -2,15 +2,17 @@
 
 <div class="rest-content"> 
     <h2>THE POPULAR RESTAURANTS IN EPICURE :</h2>
-    <div class="cards">
+    <div class="cards" #myDiv>
         <swiper [config]='config' class="swiper">
-        <div *ngFor="let resturant of popular_resturants">
+        <div *ngFor="let resturant of restaurantsList">
             <app-card [cardType]="'card-restaurant'" [resturant_details]="resturant">
             </app-card>
         </div>
         </swiper>
     </div>
-    <a fxHide.lt-md class="all-restaurants">All Restaurants  <img src="../../../assets/all-restaurants-arrows.svg"></a>
+    <div class="link-container">
+        <a fxHide.lt-md class="all-restaurants">All Restaurants  <img src="../../../assets/all-restaurants-arrows.svg"></a>
+    </div>
 </div>
 
 </div>

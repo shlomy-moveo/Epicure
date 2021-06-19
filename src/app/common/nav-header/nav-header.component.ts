@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MainService } from 'src/app/services/main.service';
 
 @Component({
   selector: 'app-nav-header',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavHeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public ms:MainService
+  ) { }
+
+  // @Input() adminBar : Boolean =false
 
   ngOnInit(): void {
+    // this.adminBar = this.ms.adminZone 
   }
 
 }

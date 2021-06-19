@@ -1,5 +1,9 @@
 $font-stack: 'HelveticaNeue-Thin';
 
+body{
+  margin:0;
+}
+
 %input-style {
     object-fit: contain;
     border-radius: 4px;
@@ -60,3 +64,6 @@ $font-stack: 'HelveticaNeue-Thin';
     letter-spacing: 0.93px;
 
   }
+
+
+

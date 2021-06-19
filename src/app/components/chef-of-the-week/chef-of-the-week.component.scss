@@ -2,18 +2,10 @@
 
 .desktop{
 
-    // .swiper-wrapper{
-
-    // }
-    
-    .swiper-slide{ 
-        width: 263px !important;
-    }        // margin-right: -59px;
-
     
     .chef-weekly-container {
         margin-top: 100px;
-        width: 75%;
+        width: 70%;
         align-items: center;
         margin: auto;
         
@@ -41,7 +33,7 @@
             }
             
             .pic{
-                background: url('../../../assets/untitled-1@2x.jpg');
+                // background: url('../../../assets/untitled-1@2x.jpg');
                 background-repeat: no-repeat;
                 background-size:cover; 
                 height: 337px;
@@ -67,6 +59,7 @@
         }
         
         .chef-restaurants{
+            width: 66%;
             height: 30px;
             // margin: 59px 0 20px 5%;
             
@@ -78,14 +71,7 @@
             }
             
             .cards{ 
-                // display: flex;
-                // align-items: center;
-                // justify-content: left;
-                // flex-wrap: wrap;
 
-                .swiper {
-                 width: 100%;   
-                }
                 .card{
                     // margin-right: 10px;
                 }
@@ -95,19 +81,17 @@
     }
 }
 
-.mobile{
-    
-    
+.mobile{   
+
     .chef-weekly-container {
         width: 100%;
-        align-items: center;
-        
+        align-items: center;    
         h2 {
             @extend %h2-title-mobile;
             margin: 60px 0 12px 0;
             text-align: center;     
                 }
-        
+
         .chef-content{
             display: flex;
             width: 100%;
@@ -152,8 +136,9 @@
         }
         
         .chef-restaurants{
+            width: 90%;
             height: 30px;
-            margin: 29px 0 20px 0;
+            margin: 29px 0 0 10px;
             
             h3{
                 height: 30px;
@@ -173,8 +158,8 @@
                 // justify-content: left;
                 // flex-wrap: wrap;
 
-                .swiper {
-                    width: 100%;             }
+                // .swiper {
+                //     width: 100%;             }
 
                 .card{
                     // margin-right: 10px;

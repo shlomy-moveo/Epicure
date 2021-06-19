@@ -1,0 +1,19 @@
+<div class="text-center body-container">
+    <form class="form-signin" [formGroup]="loginForm" (ngSubmit)="handleSubmit()">
+        <img class="mb-4" src="assets/about-logo.png" alt="" width="72" height="72">
+        <h1 class="h4 mb-3 font-weight-normal">Please sign in</h1>
+        <input  formControlName="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <input  formControlName="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <div class="checkbox mb-3">
+
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <div class="alertbox">
+            <div class="alert alert-warning" role="alert" *ngIf="errorMsg" > 
+                {{errorMsg}}
+            </div>  
+        </div>
+           
+        <p class="mt-5 mb-3 text-muted">&copy; Epicure 2021</p>
+    </form>
+</div>

@@ -2,8 +2,9 @@
 
 .desktop{
 
+
   .rest-content {
-    width: 69%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     margin: auto;       
@@ -15,28 +16,46 @@
       margin-left: auto;
       margin-right: auto;
     }
-    
-    .cards {
-      display: flex;
-      justify-content: center;
+
+    .cards{
+      width: 63%;
+      margin: 0 auto; 
+      justify-content: space-evenly;
+  
     }
-    
-    .all-restaurants {
-      // width: %;
-      height: 35px;
-      margin: 30px 0 0 0;
-      font-size: 30px;
-      text-align: right; 
-      letter-spacing: 2px;
+
+    .link-container{
+      width: 61%;
+    // margin-top:11px;
+    margin: 11px auto; 
+      text-align: end;
+
+      .all-restaurants {
+        text-decoration: none;
+        font-size: 30px;
+        letter-spacing: 2px;
+      }
     }
-  }
+    @media only screen and (min-width: 2200px){
+      .cards{
+        width: 30%;
+      }
+    }  
+    @media only screen and (min-width:1800px){
+      .cards{
+        width: 57%;
+      }
+    }
+    @media only screen and (max-width: 1600px) {
+      .cards{
+        width: 71%;
+      }
+    }
+    }
+
 }
   
 .mobile{
-
-  
-
- 
 
   .rest-content {
     width: 100%;
@@ -51,28 +70,12 @@
       text-align: center;
       margin: auto;
     }
-    
-    .cards {
-      // overflow: scroll;
-      // display: flex;
 
-      // .swiper{
-      //   width: 100%;
-      // }
- 
+    .cards{
+      margin-left: 12px;
     }
 
-    // .swiper> .swiper-slide { width: 235px; impor}
 
-
-    
-    .all-restaurants {
-      height: 35px;
-      margin: 30px 0 0 0;
-      font-size: 30px;
-      text-align: right; 
-      letter-spacing: 2px;
-    }
   }
 }
   

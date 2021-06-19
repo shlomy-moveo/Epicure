@@ -5,10 +5,11 @@
 .header{
     display: flex;
     height: 53px;
-    padding: 14px 123px 5px;
+    // padding: 14px 123px 5px;
     justify-content: space-between;
     
     .left-group{
+      margin: 7px auto;
       display: flex;
       .logo {
         height: 33px;
@@ -41,6 +42,7 @@
     }
     
     .right-group{
+      margin: 6px auto;
       display: flex;
       
         .User-icon {

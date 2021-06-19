@@ -9,6 +9,9 @@
         width: 360px;
         font-family: $font-stack;
         margin-right: 11px;
+
+        
+        
    
         
         img{
@@ -90,11 +93,11 @@
         background-color: #f7e0b2;
         width: 206px;
         height: 224px;
-        margin: 14px;
         font-family: $font-stack;
 
         &.card-dish { 
             width: 260px;
+            margin:11px;
 
             .img-dish{
                 width: 260px;
@@ -105,6 +108,9 @@
         &.card-restaurant {
             width: 206px;
              height: 338px;
+             margin-top: 14px;
+            //  margin-left:auto;
+     
 
             .img-res{
                 width: 206px;

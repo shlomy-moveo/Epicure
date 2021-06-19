@@ -1,5 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
+
+
+
+ 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +28,15 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
+import { LoginComponent } from './components/admin/login/login.component';
+import { AdminZoneComponent } from './components/admin/admin-zone/admin-zone.component';
+import { ResultTableComponent } from './components/admin/result-table/result-table.component';
+import { TableRowComponent } from './components/admin/table-row/table-row.component';
+// import { AuthGuard } from './auth.guard';
+// import { AuthService } from './services/auth.service';
+
+// import { SwiperContainer, SwiperSlide } from './swiper/swiper.component';
+
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -43,19 +59,31 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     RestaurantsComponent,
     SignDishComponent,
     MiniCardComponent,
+    LoginComponent,
+    AdminZoneComponent,
+    ResultTableComponent,
+    TableRowComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FlexLayoutModule,
-    SwiperModule
+    SwiperModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
+
+    
+    
 
 
   ],
   providers: [
+    // AuthGuard,
+    // AuthService,
     {
       provide: SWIPER_CONFIG,
-      useValue: DEFAULT_SWIPER_CONFIG
+      useValue: DEFAULT_SWIPER_CONFIG,
     }
   ],
   bootstrap: [AppComponent]

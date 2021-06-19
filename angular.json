@@ -18,7 +18,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "app", 
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -34,10 +34,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
-            ],
+              "src/styles.scss"            ],
             "scripts": []
-          },
+          }, 
           "configurations": {
             "production": {
               "budgets": [
