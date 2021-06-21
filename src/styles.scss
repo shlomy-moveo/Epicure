@@ -1,8 +1,8 @@
 $font-stack: 'HelveticaNeue-Thin';
 
-body{
-  margin:0;
-}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
 
 %input-style {
     object-fit: contain;
@@ -66,4 +66,11 @@ body{
   }
 
 
-
+.mat-tab-body-wrapper{
+  font-size: x-large;
+  font-family: $font-stack;
+margin: auto;
+margin-top: 15px;
+font-weight: 700;
+letter-spacing: 4.93px;
+}

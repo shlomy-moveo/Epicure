@@ -15,11 +15,6 @@ import { RestaurantsService } from 'src/app/services/restaurants.service';
 })
 export class RestaurantsComponent implements OnInit {
 
-  @ViewChild('myDiv',{static: true}) mydiv?: ElementRef<HTMLInputElement> ;
-
-
-
-
   config: SwiperOptions = {
     keyboard: true,
     mousewheel:true,
@@ -81,14 +76,7 @@ export class RestaurantsComponent implements OnInit {
   constructor( public rs:RestaurantsService) { }
   restaurantsList: Restaurant[] | undefined
   
-  // popular_resturants : Restaurant[] = [
-  //   {name:"Claro", chef:"Ran Shmueli",img:"../../../assets/claro.jpg",imgMobile:"../../../assets/mobile/claro.jpg"},
-  //   {name:"Lumina", chef:"Meir Adoni",img:"../../../assets/mizlala-gret-mullet-fillet.jpg",imgMobile:"../../../assets/mizlala-gret-mullet-fillet.jpg"},
-  //   {name:"Tiger Lilly", chef:"Yanir Green",img:"../../../assets/tiger-lili.jpg",imgMobile:"../../../assets/tiger-lili.jpg"},
-  //   {name:"Claro", chef:"Ran Shmueli",img:"../../../assets/claro.jpg",imgMobile:"../../../assets/mobile/claro.jpg"},
-  //   {name:"Lumina", chef:"Meir Adoni",img:"../../../assets/mizlala-gret-mullet-fillet.jpg",imgMobile:"../../../assets/mizlala-gret-mullet-fillet.jpg"},
-  //   {name:"Tiger Lilly", chef:"Yanir Green",img:"../../../assets/tiger-lili.jpg",imgMobile:"../../../assets/tiger-lili.jpg"}
-  // ]
+
   ngOnInit(): void {
     window.addEventListener('resize', () => this.resizeCarouselle());
     this.resizeCarouselle();

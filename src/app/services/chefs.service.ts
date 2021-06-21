@@ -13,6 +13,8 @@ export class ChefsService {
 
   baseUrl: string = "http://localhost:3000/chefs/"
 
+  chefsList : any
+
   // Observable<Country[]>
 
   getChefs() {  

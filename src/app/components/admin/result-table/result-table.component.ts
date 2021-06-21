@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Chef, Dish, Restaurant } from 'src/app/interfaces/interface';
+import { MainService } from 'src/app/services/main.service';
 
 @Component({
   selector: 'app-result-table',
@@ -8,14 +8,17 @@ import { Chef, Dish, Restaurant } from 'src/app/interfaces/interface';
 })
 export class ResultTableComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+  ) { }
 
-  @Input() tableType : any
-
+  @Input() tableData : any
+  @Input() tableHeaders : string[] = []
+  
   ngOnInit(): void {
-    setTimeout(()=>{ console.log(this.tableType)}, 2500);
+    setTimeout(()=>{ console.log(this.tableData)}, 2000);
 
-    
+  
   }
+
 
 }

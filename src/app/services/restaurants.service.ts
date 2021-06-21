@@ -11,6 +11,8 @@ export class RestaurantsService {
     private http:HttpClient
   ) { }
 
+  restaurantList: any
+
 
   baseUrl: string = "http://localhost:3000/restaurants/"
 
@@ -24,5 +26,9 @@ export class RestaurantsService {
     return this.http.get( this.baseUrl + 'getPopularRestaurants') 
   }
 
+
+  addRestaurant(body : any) {  
+    return this.http.post( this.baseUrl + 'addRestaurant/' , body) 
+  }
 
 }

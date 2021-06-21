@@ -44,6 +44,10 @@
     .right-group{
       margin: 6px auto;
       display: flex;
+
+      app-search-input{
+        margin-top: 4px;
+      }
       
         .User-icon {
         height: 23px;

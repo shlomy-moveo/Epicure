@@ -16,6 +16,12 @@ margin-left: 10px;
 .thumbnail {
     width: 80px;
     height: 80px;
-    // border-radius: 100%;
     background-size: cover;
+} 
+
+.thumbnail-bg {
+    width: 190px;
+    background-size:100%;
+    background-repeat: no-repeat;
+    background-position: center;
 } 
