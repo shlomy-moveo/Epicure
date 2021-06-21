@@ -1,0 +1,72 @@
+@import '../../../styles.scss';
+
+.desktop {
+
+.dishes-content{
+    font-family: $font-stack;
+          width: 100%;
+          display: flex; 
+          flex-direction: column;
+          align-items: center;
+ 
+    h2{
+        @extend %h2-title;
+        width: 100%;
+        height: 30px;
+        margin-top: 100px;
+        margin-bottom: 42px;
+    }
+        .cards {
+            display: flex;
+            justify-content: center;
+
+            .title{
+                font-family: 'Helvetica Neue', sans-serif;
+                text-align: center;
+                margin-bottom: 23px;
+                height: 35px;
+                font-size: 30px;
+                font-weight: 100;
+                letter-spacing: 1.77px;
+
+                
+          }
+    }
+}
+}
+
+.mobile {
+
+.dishes-content{
+    font-family: $font-stack;
+    height: 628px;
+          width: 100%;
+          display: flex; 
+          flex-direction: column; 
+
+
+
+    h2{
+        @extend %h2-title-mobile;
+        width: 100%;
+        margin-top: 50px;
+    }
+        .cards {
+            overflow-x: scroll;
+            overflow-y: hidden;
+            display: flex;
+            // max-width: 100vh;
+            height: 100%;
+
+            .title{
+                font-family: 'Helvetica Neue', sans-serif;
+                text-align: center;
+                margin-bottom: 13px;
+                height: 35px;
+                font-size: 16px;
+                font-weight: 100;
+                letter-spacing: 1.77px;
+            }
+    }
+}
+}

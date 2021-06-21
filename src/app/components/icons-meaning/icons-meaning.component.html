@@ -1,17 +1,13 @@
-    <div>
-        <p>THE MEANING OF OUR ICONS :</p>
-        <div class="icons"> 
-            <div class="icon">
-                <img alt="Spicy">
-                <p> Spicy</p> 
-            </div>
-            <div class="icon">
-                <img alt="Vegitarian">
-                <p>Vegitarian</p>
-            </div>
-            <div class="icon">
-                <img alt="Vegan">
-                <p>Vegan</p>
+<div ngClass.lt-md="mobile" ngClass.gt-sm="desktop">
+
+    <div class="icons-meaning-container">
+        <h2>THE MEANING OF OUR ICONS :</h2>
+        <div class="icons">
+            <div *ngFor="let icon of icons" class="icon"> 
+                    <img alt="{{icon.name}}" src={{icon.img}}>
+                    <p class="icon-title"> {{icon.name}}</p> 
             </div>
         </div>
     </div>
+
+</div>

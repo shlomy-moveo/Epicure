@@ -1,0 +1,40 @@
+@import '../../../styles.scss';
+
+.desktop{
+
+  .footer-container{
+    font-family: $font-stack;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+  }
+  
+  p{
+    height: 21px;
+    margin: 0 45px 0 0;
+    font-size: 18px;
+  }
+}
+  
+.mobile{
+
+  .footer-container{
+    font-family: $font-stack;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    margin-top: 23px;
+  }
+  
+  p{
+    text-align: center;
+    height: 15px;
+    font-size: 12px;
+    font-weight: 100;
+    letter-spacing: 0.76px;
+  }
+}
+  

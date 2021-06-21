@@ -1,0 +1,16 @@
+<div ngClass.lt-md="mobile" ngClass.gt-sm="desktop">
+
+<div class="dishes-content">
+<h2 >SIGNATURE DISH OF :</h2>
+<div class="cards" >
+    <div *ngFor="let restaurant of signDishes" [ngStyle]="{'margin-top': 0}">
+    <p class="title" [ngStyle]="{'margin-top': 0}">{{restaurant.name}}</p>
+    <app-card [cardType]="'card-dish'" [resturant_details]="restaurant">
+    </app-card>
+</div>
+</div>
+
+</div>
+
+</div>
+

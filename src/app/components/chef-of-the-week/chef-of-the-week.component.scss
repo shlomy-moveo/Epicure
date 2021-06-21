@@ -1,0 +1,193 @@
+@import '../../../styles.scss';
+
+.desktop{
+
+    // .swiper-wrapper{
+
+    // }
+    
+    .swiper-slide{ 
+        width: 263px !important;
+    }        // margin-right: -59px;
+
+    
+    .chef-weekly-container {
+        margin-top: 100px;
+        width: 75%;
+        align-items: center;
+        margin: auto;
+        
+        h2 {
+            @extend %h2-title;
+            height: 30px;
+            padding-bottom: 20px;
+        }
+        
+        .chef-content{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            
+            .description{
+                margin-left: 60px;
+                  width: 60%;
+                height: 292px;
+                font-size: 25px;
+                margin-top: 0;
+                text-align: left;
+                font-family: $font-stack;
+                letter-spacing: 1.08px;
+                
+            }
+            
+            .pic{
+                background: url('../../../assets/untitled-1@2x.jpg');
+                background-repeat: no-repeat;
+                background-size:cover; 
+                height: 337px;
+                min-width: 433px;
+                position: relative;
+                
+                .chef-name{
+                    height: 78px;
+                    font-family: 'Helvetica Neue', sans-serif;
+                    background-color: rgba(255, 255, 255, 0.8);
+                    font-size: 40px;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    align-items: center;
+                    justify-content: center;
+                    letter-spacing: 1.43px;
+                    text-align: center;
+                }
+            }
+            
+        }
+        
+        .chef-restaurants{
+            height: 30px;
+            // margin: 59px 0 20px 5%;
+            
+            h3{
+                height: 30px;
+                @extend %h2-title;
+                text-align: left;
+                padding-left: 10px;
+            }
+            
+            .cards{ 
+                // display: flex;
+                // align-items: center;
+                // justify-content: left;
+                // flex-wrap: wrap;
+
+                .swiper {
+                 width: 100%;   
+                }
+                .card{
+                    // margin-right: 10px;
+                }
+            }
+        }
+        
+    }
+}
+
+.mobile{
+    
+    
+    .chef-weekly-container {
+        width: 100%;
+        align-items: center;
+        
+        h2 {
+            @extend %h2-title-mobile;
+            margin: 60px 0 12px 0;
+            text-align: center;     
+                }
+        
+        .chef-content{
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+            
+            .description{
+                width: 325px;
+                margin: auto;
+                font-size: 13.5px;
+                margin-top: 0;
+                text-align: center;
+                font-family: $font-stack;
+                letter-spacing: 1.04px;
+                
+            }
+            
+            .pic{
+                background: url('../../../assets/untitled-1@2x.jpg');
+                background-repeat: no-repeat;
+                background-size:cover; 
+                width: 334px;
+                height: 239.4px;
+                margin: 0 0.9px 0.5px 0;
+                position: relative;
+                margin: auto;
+                margin-bottom: 17px;
+                
+                .chef-name{
+                    height: 38px;
+                    font-family: 'Helvetica Neue', sans-serif;
+                    background-color: rgba(255, 255, 255, 0.8);
+                    font-size: 30px;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    letter-spacing: 1.07px;
+                    text-align: center;
+                }
+            }
+            
+        }
+        
+        .chef-restaurants{
+            height: 30px;
+            margin: 29px 0 20px 0;
+            
+            h3{
+                height: 30px;
+                @extend %h2-title-mobile;
+                text-align: left;
+                padding-left: 10px;
+            }
+            
+            .cards{ 
+                // display: flex;
+                // align-items: center;
+                // justify-content: left;
+                // overflow: scroll;
+                // display: flex;
+                // width: 100%;
+                // align-items: center;
+                // justify-content: left;
+                // flex-wrap: wrap;
+
+                .swiper {
+                    width: 100%;             }
+
+                .card{
+                    // margin-right: 10px;
+
+                    // display: flex;
+                    // flex-direction: column;
+                    // margin: 0 0 0 15px;
+                    // width: 80%;
+                }
+            }
+        }
+        
+    }
+}
+    
+    

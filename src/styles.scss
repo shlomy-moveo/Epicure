@@ -1,1 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
+$font-stack: 'HelveticaNeue-Thin';
+
+%input-style {
+    object-fit: contain;
+    border-radius: 4px;
+    border: solid 0.5px grey;
+    background-color: rgba(255, 255, 255, 0.11);
+    background-image: url('./assets/search-icon.svg');
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+  }
+
+  %input-placeholder {
+    opacity: 0.8;
+    font-family: $font-stack;
+    font-weight: 100;
+  }
+
+  %card-title {
+    margin: auto;
+    letter-spacing: 2.67px;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 40px
+  }
+  %card-title-mobile {
+    margin: auto;
+    letter-spacing: 1.67px;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 25px
+  }
+
+  %card-sub-title {
+    font-size: 25px;
+    font-weight: 100;
+    margin: 20px 0 0 0 ;
+    letter-spacing: 1.67px;
+  }
+  %card-sub-title-mobile {
+    font-size: 20px;
+    font-weight: 100;
+    margin: 4px 0 0 0 ;
+    letter-spacing: 1.67px;
+  }
+
+  %h2-title{
+    font-size: 30px;
+    font-weight: 100;
+    font-family: $font-stack;
+        src: url(https://static1.squarespace.com/static/5f1b9f2f34c4503c6738c796/t/5fecc0e9fc547e49dd2f26e6/1609351401344/NEORD___-webfont.woff);
+
+    text-align: center;
+    letter-spacing: 1.25px;
+  }
+
+  %h2-title-mobile{
+    font-size: 14px;
+    font-weight: 100;
+    font-family: $font-stack;
+    text-align: center;
+    letter-spacing: 0.93px;
+
+  }

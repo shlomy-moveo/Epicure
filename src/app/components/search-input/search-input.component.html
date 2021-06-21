@@ -1,5 +1,8 @@
+<div ngClass.lt-md="mobile" ngClass.gt-sm="desktop">
+
 <div class="search-input">
-    <input id="search" name="search" type="text"
-    placeholder="Search for restaurants cuisine, chef">
-    <img class="search-icon"> 
+    <input name="search" type="text" class="input"
+    placeholder="Search for restaurants cuisine, chef" [ngClass]="header ? 'header' : 'intro'">
+</div>
+
 </div>

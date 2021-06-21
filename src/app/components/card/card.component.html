@@ -1,1 +1,22 @@
-<p>card works!</p>
+<div ngClass.lt-md="mobile" ngClass.gt-sm="desktop">
+
+<div *ngIf="resturant_details" class="card" class="{{cardType}}">
+    
+    <img fxHide.gt-sm [ngClass]="resturant_details.sign_dish ? 'img-dish' : 'img-res'" src={{resturant_details.imgMobile}}> 
+    <img fxHide.lt-md src={{resturant_details.img}}> 
+    <div class="details">
+        <h2 class="title" [ngClass]="resturant_details.sign_dish ? 'dish' : 'restaurant'">{{resturant_details.sign_dish ? resturant_details.sign_dish.name : resturant_details.name}}</h2>
+        <p class="sub-title" [ngClass]="resturant_details.sign_dish ? 'products' : 'chef'">{{resturant_details.sign_dish ? resturant_details.sign_dish.ingredients : resturant_details.chef}}</p>
+        <div *ngIf="resturant_details.sign_dish" class="dishContent">
+            
+            <div class="icon-img"><img  src={{resturant_details.sign_dish.icon}} alt=''></div>
+            <div class="price">
+                <div class="line"></div>
+                <p> ₪ {{resturant_details.sign_dish.price}} </p>
+                <div class="line"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>

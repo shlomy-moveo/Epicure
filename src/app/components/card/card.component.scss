@@ -1,0 +1,188 @@
+@import '../../../styles.scss';
+
+.desktop{
+
+
+    
+    .card{
+        background-color: #f9f4ea;
+        width: 360px;
+        font-family: $font-stack;
+        margin-right: 11px;
+   
+        
+        img{
+            width: 360px;
+        }   
+        
+        .details{
+            text-align: center;
+            align-items: center;
+            background-color: #f9f4ea;
+            
+            .title{
+                @extend %card-title;
+            }
+            
+            .restaurant{
+                height: 47px;
+            }
+            .dish{
+                width:201px;      
+            }
+            
+            .sub-title{
+                @extend %card-sub-title;
+            }
+            
+            .chef{
+                height: 39px;
+            }
+            .products{
+                height: 154.8px;
+                width: 290px;
+                margin: auto;  
+            padding-bottom: 10px;  
+                }
+            
+            .dishContent{
+                height: 90px;
+
+                .icon-img{
+                    height: 30px; 
+                }
+                
+                img{
+                    max-height: 30px; 
+
+                }
+                .price{  
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    p{
+                        height: 29px;
+                        font-family: $font-stack;
+                        font-size: 24.9px;
+                    }
+                    
+                    .line{
+                        margin: 2px;
+                        width: 112px;
+                        height: 1px;
+                        border: solid 0.4px #979797;
+                    }
+                }
+                
+            }
+            
+            
+        }
+    }
+}
+
+.mobile{
+
+ 
+
+    .card{
+        background-color: #f7e0b2;
+        width: 206px;
+        height: 224px;
+        margin: 14px;
+        font-family: $font-stack;
+
+        &.card-dish { 
+            width: 260px;
+
+            .img-dish{
+                width: 260px;
+                
+            }
+           }
+
+        &.card-restaurant {
+            width: 206px;
+             height: 338px;
+
+            .img-res{
+                width: 206px;
+                height: 224px;
+            }
+        }
+
+        // .img-res{
+        //     width: 206px;
+        // }  
+        
+        
+        .details{
+            text-align: center;
+            align-items: center;
+            background-color: #f7e0b2;
+            
+            .title{
+                @extend %card-title-mobile;
+            }
+            
+            .restaurant{
+                padding-top: 25px;
+                height: 29px;
+            }
+            .dish{
+                    width:144px; 
+                    letter-spacing: 1.84px;
+                    font-size: 27.5px;     
+            }
+            
+            .sub-title{
+                @extend %card-sub-title-mobile;
+            }
+            
+            .chef{
+                height: 23px;
+                padding-bottom: 12px;
+            }
+            .products{
+                margin: auto;
+                text-align: center;
+                height: 111.8px;
+                width: 215px;
+                font-size: 17.3px;
+                padding: 10px 0;
+            }
+            
+            .dishContent{
+                height: 90px;
+
+                .icon-img{
+                    height: 30px; 
+                }
+                
+                img{
+                    max-height: 30px; 
+                }
+                .price{  
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    p{
+                        width: 70px;
+                        height: 24px;
+                        font-family: $font-stack;
+                        font-size: 21.9px;
+                    }
+                    
+                    .line{
+                        margin: 2px;
+                        width: 112px;
+                        height: 1px;
+                        border: solid 0.4px #979797;
+                    }
+                }
+            }
+        }
+    }
+}

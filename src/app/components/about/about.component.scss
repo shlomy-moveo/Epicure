@@ -1,0 +1,168 @@
+@import '../../../styles.scss';
+
+.desktop{
+
+    
+    .about-container{
+        width: 100%;
+        background-color: #fafafa;
+        display: flex;
+        align-items: center;
+        padding-bottom: 40px;
+        margin: 497px 0 0 0;
+        position: relative;
+        
+        .content{
+            padding-top: 65px;
+            width: 35%;
+            margin: 0px 10%;
+            h2{
+                @extend %h2-title;
+                height: 35px;
+                // margin: 65px 0 20px 0;
+                text-align: left;
+            }
+            
+            .about{
+                width: 567px;
+                height: 269px;
+                font-size: 22px;
+                font-weight: 100;
+                font-family: $font-stack;
+                letter-spacing: 1.69px;
+                margin-bottom: 110px;
+                
+                
+            }
+        }
+        
+        .icons{
+            
+            .icon{
+                height: 129px;
+                position: absolute;
+                right: 15%;        }
+                
+                img{
+                    background-color: #fafafa;
+                }
+                .downloads{
+                    width: 40%;
+                    margin: 0 9.5%;
+                    display: flex;
+                    align-items: center;
+                    position: absolute;
+                    bottom: 10px;
+                    left: 0;
+                    .download{
+                        height: 52.8px;
+                        padding: 8px 11.7px 7.4px 10.5px;
+                        border-radius: 9.6px;
+                        border: solid 0.6px black;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-around;
+                        width: 30%;
+                        max-width: 180px;
+                        margin: 20px 8px;
+                        p{
+                            text-align: center;
+                            // height: 36px;
+                            font-family: $font-stack;
+                            font-stretch: normal;
+                            font-style: normal;
+                            line-height: normal;
+                            // letter-spacing: 1.29px;
+                        }
+                    }
+                    
+                    
+                }
+                
+                
+            }
+        }
+    }
+        
+.mobile{
+
+    
+    .about-container{
+        width: 100%;
+        background-color: #fafafa;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 40px;
+        margin: 370px 0 0 0;
+        
+        .content{
+            padding-top: 28px;
+            h2{
+                @extend %h2-title-mobile;
+                height: 35px;
+                text-align: center;
+            }
+            
+            .about{
+                width: 304px;
+                font-size: 14px;
+                font-weight: 100;
+                text-align: center;
+                font-family: $font-stack;
+                letter-spacing: 1.69px;
+            }
+        }
+        
+        .icons{
+            padding-top:30px;
+            align-items: center;
+            justify-items: center;
+            .icon{
+                
+            width: 137px; 
+            justify-content: center;
+            margin: auto;   
+                  }
+                
+                img{
+                    background-color: #fafafa;
+                }
+                .downloads{
+                    padding-top: 15px;  
+                    display: flex;
+                    align-items: center;
+                    .download{
+                        height: 36.8px;
+                        width: 127px;
+                        padding: auto;
+                        border-radius: 9.6px;
+                        border: solid 0.5px black;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-around;
+                        margin: 20px 8px;
+                        p{
+                            text-align: center;
+                            font-size: 10px;
+                            font-family: $font-stack;
+                            font-stretch: normal;
+                            font-style: normal;
+                            line-height: normal;
+                            font-weight: normal;
+
+                            letter-spacing: 0.9px;
+                        }
+                    }
+                    
+                    
+                }
+                
+                
+            }
+        }
+    }
+        
+        
+        

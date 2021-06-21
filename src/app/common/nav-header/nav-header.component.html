@@ -1,11 +1,18 @@
-<div>
-        <img src=""  class="logo"> 
-        <span class="epicure" >EPICURE</span>
-        <a class="restaurants" >Restaurants</a>
-        <a class="chefs">Chefs</a>
-        <app-search-input></app-search-input>
-        <div class="icons">
-            <img class="User-icon">
-            <img class="Bag-icon">
+<div ngClass.lt-md="mobile" ngClass.gt-sm="desktop">
+
+    <div class="header">
+        <div class="left-group">
+            <img fxHide.gt-sm src="assets/group-13.svg">
+            <img src="../../../assets/logo@3x.png" class="logo">
+            <span fxHide.lt-md class="EPICURE" >EPICURE</span>
+            <a class="Restaurants" fxHide.lt-md>Restaurants</a>
+            <a class="Chefs" fxHide.lt-md>Chefs</a>
         </div>
+        <div class="right-group">
+            <app-search-input fxHide.lt-md [header]="true"></app-search-input>
+            <img src="../../../search-icon.svg" fxHide.gt-sm class="Search-icon">
+            <img src="../../../assets/user-icon.svg" class="User-icon">
+            <img src="../../../assets/bag-icon.svg" class="Bag-icon">
+        </div>
+    </div>
 </div>

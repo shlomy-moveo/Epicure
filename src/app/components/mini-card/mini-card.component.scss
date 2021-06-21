@@ -1,0 +1,65 @@
+@import '../../../styles.scss';
+
+.desktop{
+
+    
+    .card{
+        background-color: #f9f4ea;
+        width: 231px;
+        height: 357px;
+        font-family: 'HelveticaNeue-Thin';
+        margin: 11px;
+        
+        img{
+            width: 231px;
+            height: 224px;
+        }   
+        
+        .details{
+            text-align: center;
+            align-items: center;
+            background-color: #f9f4ea;
+            
+            .res-name{
+                margin: auto;
+                letter-spacing: 2.67px;
+                font-family: 'Helvetica Neue', sans-serif;
+                font-size: 30px;
+                width:201px ;     
+            }
+        }
+    }
+}
+
+.mobile{
+
+    .card{
+        background-color: #f9f4ea;
+
+        width: 153.6px;
+        height: 237.4px;
+        font-family: 'HelveticaNeue-Thin';
+        margin: 11px;
+        
+        img{
+            width: 153.6px;
+            height: 148.3px;
+          
+        }   
+        
+        .details{
+            text-align: center;
+            align-items: center;
+            background-color: #f9f4ea;
+            
+            .res-name{
+                margin: auto;
+                margin-top: 10px;
+                letter-spacing: 1.33px;
+                font-family: 'Helvetica Neue', sans-serif;
+                font-size: 20px;
+                width:77px ;     
+            }
+        }
+    }
+}
