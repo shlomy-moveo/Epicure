@@ -1,0 +1,84 @@
+<div class="wrapper">
+  <h2 mat-dialog-title>Add  {{ category }}</h2>
+  <div class="form">
+    <mat-form-field appearance="fill">
+      <mat-label>Select Category</mat-label>
+      <mat-select (valueChange)="changeCategory($event)">
+        <mat-option *ngFor="let option of options" [value]="option">
+          {{ option }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <form *ngIf="category" [formGroup]="addForm">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" />
+        <mat-error *ngIf="addForm.controls.name.hasError('required')">
+          Name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Image source</mat-label>
+        <input matInput formControlName="img" />
+        <mat-error *ngIf="addForm.controls.img.hasError('required')">
+          Image source is <strong>required</strong>
+        </mat-error>
+      </mat-form-field> 
+
+
+
+      <mat-form-field
+        appearance="fill"
+        *ngIf="category === 'Restaurants'"
+      >
+        <mat-label>Select Chef</mat-label>
+        <mat-select formControlName="chef">
+          <mat-option *ngFor="let chef of cs.allChefsList" [value]="chef._id">
+            {{ chef.name }}
+          </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+      <mat-form-field appearance="fill" *ngIf="category === 'Dishes'">
+        <mat-label>Select Restaurant</mat-label>
+        <mat-select formControlName="restaurant">
+          <mat-option
+            *ngFor="let restaurant of rs.allRestaurantsList"
+            [value]="restaurant._id"
+          >
+            {{ restaurant.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field *ngIf="category !== 'Restaurants'">
+        <mat-label>Description</mat-label>
+        <textarea
+          formControlName="description"
+          matInput
+        
+        ></textarea>
+      </mat-form-field>
+
+      <mat-form-field *ngIf="category === 'Dishes'">
+        <mat-label>Dish Price</mat-label>
+        <input
+          min="0"
+          type="number"
+          matInput
+          formControlName="price"
+        />
+        <mat-error *ngIf="addForm.controls.price.hasError('required')">
+          Price in numbers type is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+    </form>
+  </div>
+
+  <div mat-dialog-actions> 
+  <button mat-button mat-dialog-close >No Thanks</button>
+  <button mat-button mat-dialog-close *ngIf='addForm'(click)="handleSubmit()" [disabled]='addForm.invalid'>Add</button>
+</div> 

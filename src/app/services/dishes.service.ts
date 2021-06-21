@@ -16,4 +16,10 @@ export class DishesService {
   getDishes() {  
     return this.http.get( this.baseUrl + 'getDishes') 
   }
+
+  addDish(body : any) {  
+    return this.http.post( this.baseUrl + 'addDish/' , body) 
+  }
+
+  
 }

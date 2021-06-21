@@ -12,6 +12,8 @@ export class ChefsService {
   ) { }
 
   baseUrl: string = "http://localhost:3000/chefs/"
+  allChefsList :any
+
 
   // Observable<Country[]>
 

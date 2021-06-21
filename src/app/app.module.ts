@@ -6,7 +6,8 @@ import { FormsModule } from '@angular/forms';
 
 
 
- 
+import { AngularMaterialModule } from './modules/angular-material.module';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,6 +33,9 @@ import { LoginComponent } from './components/admin/login/login.component';
 import { AdminZoneComponent } from './components/admin/admin-zone/admin-zone.component';
 import { ResultTableComponent } from './components/admin/result-table/result-table.component';
 import { TableRowComponent } from './components/admin/table-row/table-row.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DialogComponent } from './components/admin/dialog/dialog.component';
+import { DeleteDialogComponent } from './components/delete-dialog/delete-dialog.component';
 // import { AuthGuard } from './auth.guard';
 // import { AuthService } from './services/auth.service';
 
@@ -63,19 +67,19 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     AdminZoneComponent,
     ResultTableComponent,
     TableRowComponent,
+    DialogComponent,
+    DeleteDialogComponent,
   ],
-  imports: [
+  imports: [  
     BrowserModule,
-    AppRoutingModule,
+    AppRoutingModule, 
     FlexLayoutModule,
     SwiperModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
-
-    
-    
-
+    FormsModule,
+    AngularMaterialModule,  
+    BrowserAnimationsModule
 
   ],
   providers: [

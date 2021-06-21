@@ -1,2 +1,15 @@
+<mat-tab-group
+  (selectedTabChange)="changeCategory($event)"
+  mat-align-tabs="center"
+>
+<mat-tab label="Restaurants">Restaurants</mat-tab>
+  <mat-tab label="Chefs">Chefs</mat-tab>
+  <mat-tab label="Dishes">Dishes</mat-tab>
+</mat-tab-group>
 
-<app-result-table   [tableType]="this.tableList"></app-result-table>
+<button mat-fab color="primary" (click)="openDialog()">
+  <mat-icon>add</mat-icon>
+</button>
+
+<app-result-table [tableData]="this.ms.tableList" [headersColums]="headersColums"></app-result-table>
+  
