@@ -1,15 +1,28 @@
-<mat-tab-group
-  (selectedTabChange)="changeCategory($event)"
-  mat-align-tabs="center"
->
-<mat-tab label="Restaurants">Restaurants</mat-tab>
-  <mat-tab label="Chefs">Chefs</mat-tab>
-  <mat-tab label="Dishes">Dishes</mat-tab>
+<mat-tab-group (selectedTabChange)="changeCategory($event)" mat-align-tabs="center">
+    <mat-tab label="Restaurants">Restaurants</mat-tab>
+    <mat-tab label="Chefs">Chefs</mat-tab>
+    <mat-tab label="Dishes">Dishes</mat-tab>
 </mat-tab-group>
 
+
 <button mat-fab color="primary" (click)="openDialog()">
-  <mat-icon>add</mat-icon>
+    <mat-icon>add</mat-icon>
 </button>
 
+    <div class="button-row">
+        <button mat-button color="primary" *ngIf="this.ms.tableCategory === 'restaurants' && paginationSkipNumber>0"
+            (click)="paginationRestaurant('previous')">
+            << previous page </button>
+
+        <button mat-button color="primary"
+            *ngIf="this.ms.tableCategory === 'restaurants' && restaurantsNumber>paginationSkipNumber+5"
+            (click)="paginationRestaurant('next')">
+            next page >>
+        </button>
+
+    </div>
+
+
+
+
 <app-result-table [tableData]="this.ms.tableList" [headersColums]="headersColums"></app-result-table>
-  

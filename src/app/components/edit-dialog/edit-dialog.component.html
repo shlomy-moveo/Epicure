@@ -1,0 +1,88 @@
+<h2 mat-dialog-title>Edit  "{{ editForm.value.name }}" </h2>
+    <form  [formGroup]="editForm">
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" />
+          <mat-error *ngIf="editForm.controls.name.hasError('required')">
+            Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <mat-label>Image source</mat-label>
+          <input matInput formControlName="img" />
+          <mat-error *ngIf="editForm.controls.img.hasError('required')">
+            Image source is <strong>required</strong>
+          </mat-error>
+        </mat-form-field> 
+  
+  
+  
+        <mat-form-field
+          appearance="fill"
+          *ngIf="ms.tableCategory === 'restaurants'"
+        >
+          <mat-label>Select Chef</mat-label>
+          <mat-select formControlName="chef">
+            <mat-option *ngFor="let chef of cs.allChefsList" [value]="chef._id">
+              {{ chef.name }}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+  
+        <mat-form-field appearance="fill" *ngIf="ms.tableCategory === 'dishes'">
+          <mat-label>Select Restaurant</mat-label>
+          <mat-select formControlName="restaurant">
+            <mat-option
+              *ngFor="let restaurant of rs.allRestaurantsList"
+              [value]="restaurant._id"
+            >
+              {{ restaurant.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <mat-form-field *ngIf="ms.tableCategory === 'chefs'">
+          <mat-label>Description</mat-label>
+          <textarea
+            formControlName="description"
+            matInput
+          
+          ></textarea>
+        </mat-form-field>
+
+        <mat-form-field *ngIf="ms.tableCategory === 'dishes'">
+          <mat-label>Ingredients</mat-label>
+          <textarea
+            formControlName="ingredients"
+            matInput
+          
+          ></textarea>
+        </mat-form-field>
+  
+        <mat-form-field *ngIf="ms.tableCategory === 'dishes'">
+          <mat-label>Dish Price</mat-label>
+          <input
+            min="0"
+            type="number"
+            matInput
+            formControlName="price"
+          />
+          <mat-error *ngIf="editForm.controls.price.hasError('required')">
+            Price in numbers type is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field *ngIf="ms.tableCategory === 'restaurants'">
+            <input matInput class="pointer" type="text"  >
+
+            <mat-checkbox formControlName="inPopularList" >Popular Dish</mat-checkbox>
+        </mat-form-field>
+  
+      </form>
+  
+    <div mat-dialog-actions> 
+    <button mat-button mat-dialog-close >No Thanks</button>
+    <button mat-button mat-dialog-close *ngIf='editForm'(click)="handleEdit()" [disabled]='editForm.invalid'>Edit</button>
+  </div> 
+  

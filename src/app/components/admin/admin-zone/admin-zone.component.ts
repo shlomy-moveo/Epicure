@@ -18,32 +18,26 @@ import { MainService } from 'src/app/services/main.service';
 })
 export class AdminZoneComponent implements OnInit {
   // tableList: Restaurant[] | Chef[] | Dish[] | undefined;
-  headersColums: string[] = ["Name","Image","Chef","Actions"]
+  headersColums: string[] = ["Name", "Image", "Chef", "Actions"]
   // category = 'restaurant'
+  paginationSkipNumber = 0
+  restaurantsNumber = 0
+
 
   constructor(
-    public ms:MainService,
-    public ds:DishesService,
-    public cs:ChefsService,
+    public ms: MainService,
+    public ds: DishesService,
+    public cs: ChefsService,
     public rs: RestaurantsService,
-     public dialog: MatDialog) {}
+    public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.ms.adminZone = true;
-
-
-    this.rs.getRestaurants().subscribe(
-      (res: any) => {
-        if (!res) {
-          throw new Error('res is undefined');
-        }
-        this.ms.tableList = res;
-      },
-      (err: any) => {
-        console.log(err);
-      }
-    );
+    this.getRestaurant(this.paginationSkipNumber)
+    this.getRestaurantsLength()
   }
+
+
 
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogComponent, {
@@ -57,28 +51,28 @@ export class AdminZoneComponent implements OnInit {
     });
   }
 
-  changeCategory(e:any): void {
+  changeCategory(e: any): void {
     if (e) {
       this.ms.tableCategory = e.tab.textLabel.toLowerCase();
     }
     if (this.ms.tableCategory === 'restaurants') {
-      this.ngOnInit();
-          this.headersColums = ["Name","Image","Chef","Actions"] ;
+      this.getRestaurant(this.paginationSkipNumber)
+      this.headersColums = ["Name", "Image", "Chef", "Actions"];
 
-    } else if (this.ms.tableCategory === 'chefs') { 
+    } else if (this.ms.tableCategory === 'chefs') {
       this.cs.getChefs().subscribe(
         (res: any) => {
           if (!res) {
             throw new Error('res is undefined');
           }
           this.ms.tableList = res;
-          this.headersColums = ["Name","Image","Description","Restaurants","Actions"] 
+          this.headersColums = ["Name", "Image", "Description", "Restaurants", "Actions"]
         },
         (err: any) => {
           console.log(err);
         }
       );
-      
+
     } else if (this.ms.tableCategory === 'dishes') {
       this.ds.getDishes().subscribe(
         (res: any) => {
@@ -86,7 +80,7 @@ export class AdminZoneComponent implements OnInit {
             throw new Error('res is undefined');
           }
           this.ms.tableList = res;
-          this.headersColums = ["Name","Image","Restaurant","Price","Ingredients","Actions"] 
+          this.headersColums = ["Name", "Image", "Restaurant", "Price", "Ingredients", "Actions"]
         },
         (err: any) => {
           console.log(err);
@@ -94,4 +88,49 @@ export class AdminZoneComponent implements OnInit {
       );
     }
   }
+
+  getRestaurant(paginationSkip: number) {
+
+    this.rs.getRestaurantsTable(paginationSkip).subscribe(
+      (res: any) => {
+        if (!res) {
+          throw new Error('res is undefined');
+        }
+        this.ms.tableList = res;
+      },
+      (err: any) => {
+        console.log(err);
+      }
+    );
+  }
+
+  getRestaurantsLength() {
+
+    this.rs.getRestaurantsLength().subscribe(
+      (res: any) => {
+        if (!res) {
+          throw new Error('res is undefined');
+        }
+        console.log(res);
+
+        this.restaurantsNumber = res;
+      },
+      (err: any) => {
+        console.log(err);
+      }
+    );
+  }
+
+  paginationRestaurant(nav: string) {
+    if (nav === 'next') {
+      this.paginationSkipNumber += 5
+    } else {
+      this.paginationSkipNumber -= 5
+    }
+    this.getRestaurant(this.paginationSkipNumber)
+    console.log(this.paginationSkipNumber);
+  }
+
+
+
 }

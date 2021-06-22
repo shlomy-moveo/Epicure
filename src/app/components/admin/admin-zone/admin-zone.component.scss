@@ -1,7 +1,14 @@
 // @import "~bootstrap/dist/css/bootstrap.css";
 @import '../../../../styles.scss';
 
-button{
-    margin-left: 47%;
-margin-right: 45%; 
+
+button {
+    display: block;
+    margin:0 auto;
 }
+
+    .button-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }

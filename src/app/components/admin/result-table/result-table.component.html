@@ -2,13 +2,9 @@
     <thead >
       <tr >
         <th scope="col" *ngFor="let col of headersColums">{{col}}</th>
-        <!-- <th scope="col">Chef</th>
-        <th scope="col">Image</th>
-        <th scope="col">Item Edit</th> -->
       </tr>
     </thead>
     <tbody >
-        <!-- <app-table-row [item]="item"></app-table-row> -->
 
       <tr *ngFor="let item of tableData">
         <th scope="row">{{item.name}}</th>
@@ -18,16 +14,27 @@
         <td *ngIf="item.description">{{ item.description.slice(0,19) }}</td>
         <td *ngIf="item.restaurant">{{ item.restaurant.name }}</td>
 
-        <td *ngIf="item.restaurants"><p *ngFor="let res of item.restaurants"> {{ res.name }}</p></td>
+        <td *ngIf="item.restaurants">
+          <ul  >
+            <li  *ngFor="let res of item.restaurants">{{ res.name }}</li>    
+          </ul> 
+        </td>
         <td *ngIf="item.price">{{ item.price }}</td>
-        <td *ngIf="item.ingredients">{{ item.ingredients }}</td>
+        <td *ngIf="item.ingredients">
+          <ul  >
+            <li  *ngFor="let ingredient of item.ingredients">{{ ingredient }}</li>    
+          </ul> 
+        </td>
         
 
+        
         <td class="edit-box">
-            <button type="button" class="btn btn-secondary mr-3">Edit</button>
+          <mat-checkbox class="m-1" *ngIf="item.chef" [checked]="item.inPopularList" [disabled]="true">Popular Dish</mat-checkbox> <br/>
+            <button type="button" class="btn btn-secondary mr-3" (click)="openDialog(item, true)">Edit</button>
             <button type="button" class="btn btn-danger mr-3" (click)="openDialog(item)">Delete</button>
         </td>
       </tr>
 
     </tbody>
+
   </table>

@@ -27,11 +27,13 @@ export class DialogComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
 
-  category: string = '';
-  options = ['Restaurants', 'Chefs', 'Dishes'];
+  // category: string = '';
+  // options = ['Restaurants', 'Chefs', 'Dishes'];
   addForm: any;
 
   ngOnInit(): void {
+    this.formCategory()
+
     this.rs.getRestaurants().subscribe(
       (res: any) => {
         if (!res) {
@@ -51,7 +53,7 @@ export class DialogComponent implements OnInit {
           throw new Error('res is undefined');
         }
         this.cs.allChefsList  = res;
-      },
+      },  
       (err: any) => {
         console.log(err);
       }
@@ -59,25 +61,25 @@ export class DialogComponent implements OnInit {
 
   }
 
-  changeCategory(value: any): void {
-    this.category = value;
-    if (this.category === 'Restaurants') {
+  formCategory(): void {
+    if (this.ms.tableCategory === 'restaurants') {
       this.addForm = this.fb.group({
         name: ['', Validators.required],
         chef: ['', Validators.required],
         img: ['', Validators.required],
       });
-    } else if (this.category === 'Chefs') {
+    } else if (this.ms.tableCategory === 'chefs') {
       this.addForm = this.fb.group({
         name: ['', Validators.required],
         description: ['', Validators.required],
         img: ['', Validators.required]
       });
-    } else if (this.category === 'Dishes') {
+      
+    } else if (this.ms.tableCategory === 'dishes') {
       this.addForm = this.fb.group({
         name: ['', Validators.required],
-        description: ['', Validators.required],
-        price: ['', Validators.required],
+        ingredients: [''],
+        price: ['1', Validators.required],
         img: ['', Validators.required],
         restaurant: ['', Validators.required]
             });
@@ -85,63 +87,41 @@ export class DialogComponent implements OnInit {
   }
 
   handleSubmit(){
-    if (this.category === 'Restaurants') {
+    if (this.ms.tableCategory === 'restaurants') {
       this.rs.addRestaurant(this.addForm.value).subscribe(
         res => {
-          if(this.ms.tableCategory === this.category.toLowerCase())
-          {
             this.ms.tableList = res
-            this.ms.openSnackBar("Restaurant added successfully")    
-          }
+          this.ms.openSnackBar(`'${this.addForm.value.name}' added successfully`)    
         }, 
         err => {
           console.log(err);
-          
         }
-      )
-    } else if (this.category === 'Chefs') {
-      this.cs.addChef(this.addForm.value).subscribe(
-        res => {
-          if(this.ms.tableCategory === this.category.toLowerCase())
-          {
-            this.ms.tableList = res
+        )
+      } else if (this.ms.tableCategory === 'chefs') {
+        this.cs.addChef(this.addForm.value).subscribe(
+          res => {
+              this.ms.tableList = res
+            this.ms.openSnackBar(`'${this.addForm.value.name}' added successfully`)    
+          }, 
+          err => {
+            console.log(err);
           }
-        }, 
-        err => {
-          console.log(err);
+          )
           
-        }
-      )
-
-    } else if (this.category === 'Dishes') {
-      this.ds.addDish(this.addForm.value).subscribe(
-        res => {
-          if(this.ms.tableCategory === this.category.toLowerCase())
-          {
-            this.ms.tableList = res
-          }
-        }, 
-        err => {
+        } else if (this.ms.tableCategory === 'dishes') {
+          this.addForm.value.ingredients = this.addForm.value.ingredients.split(',')
+          this.ds.addDish(this.addForm.value).subscribe(
+            res => {
+                this.ms.tableList = res
+              this.ms.openSnackBar(`'${this.addForm.value.name}' added successfully`)    
+            }, 
+            err => {
           console.log(err);
           
         }
       )
     }
-    // this.as.addNewProduct(this.addForm.value).subscribe(
-    //   res => {
-    //     this.catalogs.products_list = res
-    //     this.ms.openSnackBar("Product added successfully ")
-    //     this.closeForm()
-    //   },
-    //   err =>{
-    //    console.log(err)
-    //    this.ms.openSnackBar(err.error._message)
-    
-    //   }
-    // )
 
     }
     
-
-
 }

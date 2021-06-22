@@ -36,6 +36,7 @@ import { TableRowComponent } from './components/admin/table-row/table-row.compon
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogComponent } from './components/admin/dialog/dialog.component';
 import { DeleteDialogComponent } from './components/delete-dialog/delete-dialog.component';
+import { EditDialogComponent } from './components/edit-dialog/edit-dialog.component';
 // import { AuthGuard } from './auth.guard';
 // import { AuthService } from './services/auth.service';
 
@@ -69,6 +70,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     TableRowComponent,
     DialogComponent,
     DeleteDialogComponent,
+    EditDialogComponent,
   ],
   imports: [  
     BrowserModule,

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Chef, Dish, Restaurant } from '../interfaces/interface';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 
 
 @Injectable({
@@ -11,7 +11,7 @@ export class MainService {
 
   constructor(
     private http:HttpClient,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
 
   ) { }
 

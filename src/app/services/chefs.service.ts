@@ -25,8 +25,19 @@ export class ChefsService {
     return this.http.get( this.baseUrl + 'getChefByid/'+id) 
   }
 
-  addChef(body : any) {  
+  addChef(body : Body) {  
     return this.http.post( this.baseUrl + 'addChef/' , body) 
+  }
+
+  deleteChef(chefId : string) {  
+    return this.http.post( this.baseUrl + '/deleteChef/' + chefId, 
+    { headres : {'content-type':'application/json'}}) 
+  }
+
+  editChef(chefId: string, body : Body){
+    return this.http.post(this.baseUrl + 'editChef/' + chefId, body, {
+      headers: { 'Content-Type': 'application/json' }
+    })
   }
 
 

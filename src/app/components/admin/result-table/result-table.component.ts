@@ -1,8 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Chef, Dish, Restaurant } from 'src/app/interfaces/interface';
+import { MainService } from 'src/app/services/main.service';
 import { DeleteDialogComponent } from '../../delete-dialog/delete-dialog.component';
-
+import { EditDialogComponent } from '../../edit-dialog/edit-dialog.component';
+ 
 @Component({
   selector: 'app-result-table',
   templateUrl: './result-table.component.html',
@@ -10,9 +12,12 @@ import { DeleteDialogComponent } from '../../delete-dialog/delete-dialog.compone
 })
 export class ResultTableComponent implements OnInit {
 
-  constructor( public dialog: MatDialog) { }
+  constructor( 
+    public dialog: MatDialog,
+    public ms:MainService
+    ) { }
 
-  choose_item : any
+  // choose_item : any
 
 
   @Input() tableData : any
@@ -22,13 +27,21 @@ export class ResultTableComponent implements OnInit {
     setTimeout(()=>{ console.log(this.tableData)}, 2500);
   }
 
-  openDialog(item : object): void {
+  openDialog(item : object, edit: boolean = false): void {
+    // check if delete or edit
     console.log(item)  
-    this.choose_item =item
-    const dialogRef = this.dialog.open(DeleteDialogComponent ,
-       {  
-      data: {item}
-    });
+    // let dialogType = edit ? EditDialogComponent : DeleteDialogComponent 
+    if(edit){
+      const dialogRef = this.dialog.open(EditDialogComponent ,  
+         {  width: '250px', 
+        data: {item}
+      });
+    }else{
+      const dialogRef = this.dialog.open(DeleteDialogComponent ,  
+         {  
+        data: {item}
+      });
+    }
     
     // dialogRef.afterClosed().subscribe(result => {
     //   this.cs.addProductToCart(this.cs.loggedCart._id ,result ).subscribe(
