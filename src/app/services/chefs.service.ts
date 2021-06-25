@@ -26,17 +26,19 @@ export class ChefsService {
   }
 
   addChef(body : Body) {  
-    return this.http.post( this.baseUrl + 'addChef/' , body) 
+    return this.http.post( this.baseUrl + 'addChef/' , body,  {
+      headers: { 'Content-Type': 'application/json', 'Authorization':localStorage.token }
+    }) 
   }
 
   deleteChef(chefId : string) {  
-    return this.http.post( this.baseUrl + '/deleteChef/' + chefId, 
-    { headres : {'content-type':'application/json'}}) 
+    return this.http.delete( this.baseUrl + '/deleteChef/' + chefId, 
+    { headers : {'content-type':'application/json',  'Authorization':localStorage.token}}) 
   }
 
   editChef(chefId: string, body : Body){
     return this.http.post(this.baseUrl + 'editChef/' + chefId, body, {
-      headers: { 'Content-Type': 'application/json' }
+      headers: { 'Content-Type': 'application/json', 'Authorization':localStorage.token }
     })
   }
 

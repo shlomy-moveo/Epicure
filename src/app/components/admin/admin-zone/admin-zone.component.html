@@ -10,12 +10,12 @@
 </button>
 
     <div class="button-row">
-        <button mat-button color="primary" *ngIf="this.ms.tableCategory === 'restaurants' && paginationSkipNumber>0"
+        <button mat-button color="primary" [disabled]="this.ms.tableCategory != 'restaurants' || this.ms.paginationSkipNumber<=0"
             (click)="paginationRestaurant('previous')">
             << previous page </button>
 
         <button mat-button color="primary"
-            *ngIf="this.ms.tableCategory === 'restaurants' && restaurantsNumber>paginationSkipNumber+5"
+        [disabled]="this.ms.tableCategory != 'restaurants' || this.ms.restaurantsNumber<=this.ms.paginationSkipNumber+5"
             (click)="paginationRestaurant('next')">
             next page >>
         </button>

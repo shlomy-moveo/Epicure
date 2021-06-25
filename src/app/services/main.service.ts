@@ -19,10 +19,13 @@ export class MainService {
 
   loggedUser : any
 
-  // tableList: Restaurant[] | Chef[] | Dish[] | undefined;
+  tableList: Restaurant[] | Chef[] | Dish[] | undefined;
   tableCategory = 'restaurants'
 
-  tableList: any;
+  // tableList: any;
+
+  paginationSkipNumber = 0
+  restaurantsNumber = 0
 
 
 
@@ -37,6 +40,7 @@ export class MainService {
   openSnackBar(message: string) {
     this._snackBar.open(message, "ok", {
       duration: 2600,
+      panelClass: ['style-snackbar']
     });
   }
 

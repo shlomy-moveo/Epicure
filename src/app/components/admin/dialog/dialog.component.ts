@@ -6,6 +6,7 @@ import {
   MatDialogRef,
   MAT_DIALOG_DATA,
 } from '@angular/material/dialog';
+import { Chef, Dish, Restaurant } from 'src/app/interfaces/interface';
 import { ChefsService } from 'src/app/services/chefs.service';
 import { DishesService } from 'src/app/services/dishes.service';
 import { MainService } from 'src/app/services/main.service';
@@ -90,7 +91,7 @@ export class DialogComponent implements OnInit {
     if (this.ms.tableCategory === 'restaurants') {
       this.rs.addRestaurant(this.addForm.value).subscribe(
         res => {
-            this.ms.tableList = res
+            this.ms.tableList = res as Restaurant[]
           this.ms.openSnackBar(`'${this.addForm.value.name}' added successfully`)    
         }, 
         err => {
@@ -100,7 +101,7 @@ export class DialogComponent implements OnInit {
       } else if (this.ms.tableCategory === 'chefs') {
         this.cs.addChef(this.addForm.value).subscribe(
           res => {
-              this.ms.tableList = res
+              this.ms.tableList = res as Chef[]
             this.ms.openSnackBar(`'${this.addForm.value.name}' added successfully`)    
           }, 
           err => {
@@ -112,7 +113,7 @@ export class DialogComponent implements OnInit {
           this.addForm.value.ingredients = this.addForm.value.ingredients.split(',')
           this.ds.addDish(this.addForm.value).subscribe(
             res => {
-                this.ms.tableList = res
+                this.ms.tableList = res as Dish[]
               this.ms.openSnackBar(`'${this.addForm.value.name}' added successfully`)    
             }, 
             err => {

@@ -18,17 +18,20 @@ export class DishesService {
   }
 
   addDish(body : Body) {  
-    return this.http.post( this.baseUrl + 'addDish/' , body) 
+    return this.http.post( this.baseUrl + 'addDish/' , body ,{
+      headers: { 'Content-Type': 'application/json' , 'Authorization':localStorage.token }
+    }
+    ) 
   }
 
   deleteDish(dishId : string) {  
-    return this.http.post( this.baseUrl + '/deleteDish/' + dishId, 
-    { headres : {'content-type':'application/json'}}) 
+    return this.http.delete( this.baseUrl + '/deleteDish/' + dishId, 
+    { headers: {'Authorization':localStorage.token }}) 
   }
   
   editDish(dishId: string, body : Body){
     return this.http.post(this.baseUrl + 'editDish/' + dishId, body, {
-      headers: { 'Content-Type': 'application/json' }
+      headers: { 'Content-Type': 'application/json' , 'Authorization':localStorage.token }
     })
 
   }

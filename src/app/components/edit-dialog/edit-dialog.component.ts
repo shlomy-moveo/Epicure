@@ -54,7 +54,7 @@ export class EditDialogComponent implements OnInit {
         ingredients: [this.data.item.ingredients],
         price: [this.data.item.price, Validators.required],
         img: [this.data.item.img, Validators.required],
-        restaurant: ['', Validators.required]
+        restaurant: [this.data.item.restaurant._id, Validators.required]
             });
     }
   }
@@ -70,6 +70,7 @@ export class EditDialogComponent implements OnInit {
         }, 
         err => {
           console.log(err);
+          this.ms.openSnackBar(err.error.msg)
         }
         )
     } else if (this.ms.tableCategory === 'chefs') {
@@ -81,9 +82,9 @@ export class EditDialogComponent implements OnInit {
           err => {
             console.log(err);
           } )
-        } else if (this.ms.tableCategory === 'dishes') {
-          this.editForm.value.ingredients = this.editForm.value.ingredients.split(',')
-
+        } else if (this.ms.tableCategory === 'dishes') {      
+          if(!Array.isArray(this.editForm.value.ingredients))
+         { this.editForm.value.ingredients = this.editForm.value.ingredients.split(',') } 
           this.ds.editDish(this.data.item._id, this.editForm.value).subscribe(
             res => {
                 this.ms.tableList = res as Dish[]

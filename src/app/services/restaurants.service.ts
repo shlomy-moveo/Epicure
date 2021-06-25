@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { MainService } from './main.service';
 
 
 @Injectable({
@@ -8,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class RestaurantsService {
 
   constructor(
+    public ms:MainService,
     private http:HttpClient
   ) { }
 
@@ -26,8 +28,9 @@ export class RestaurantsService {
     return this.http.get( this.baseUrl + 'getRestaurantsLength') 
   }
 
-  getRestaurantsTable(skipPagination : number) {  
-    return this.http.get( this.baseUrl + `getAdminTableRestaurants?skip=${skipPagination}&limit=5`) 
+  getRestaurantsTable() {  
+    return this.http.get( this.baseUrl + `getAdminTableRestaurants?skip=${this.ms.paginationSkipNumber}&limit=5`,
+    {headers: { 'Authorization':localStorage.token }}) 
   }
 
 
@@ -36,17 +39,20 @@ export class RestaurantsService {
   }
 
   addRestaurant(body : Body) {  
-    return this.http.post( this.baseUrl + 'addRestaurant/' , body) 
+    return this.http.post( `${this.baseUrl}addRestaurant/?skip=${this.ms.paginationSkipNumber}&limit=5` , body,
+    {headers: { 'Authorization':localStorage.token }}
+    ) 
   }
 
   deleteRestaurant(restaurantId : string) {  
-    return this.http.post( this.baseUrl + '/deleteRestaurant/' + restaurantId, 
-    { headres : {'content-type':'application/json'}}) 
+    return this.http.delete( `${this.baseUrl}/deleteRestaurant/${restaurantId}?skip=${this.ms.paginationSkipNumber}&limit=5`, 
+    { headers: {'Authorization':localStorage.token }}) 
+    
   }
 
   editRestaurant(restaurantId: string, body : Body){
-    return this.http.post(this.baseUrl + 'editRestaurant/' + restaurantId, body, {
-      headers: { 'Content-Type': 'application/json' }
+    return this.http.post(`${this.baseUrl}editRestaurant/${restaurantId}?skip=${this.ms.paginationSkipNumber}&limit=5`, body, {
+      headers: { 'Content-Type': 'application/json' ,  'Authorization':localStorage.token }
     })
 
   }

@@ -33,8 +33,12 @@ export class AdminZoneComponent implements OnInit {
 
   ngOnInit(): void {
     this.ms.adminZone = true;
-    this.getRestaurant(this.paginationSkipNumber)
+    // for pagintion
+    this.getRestaurantsSkipList()
     this.getRestaurantsLength()
+    // for dialog add/edit options
+    this.getAllChefs()
+    this.getAllRestaurants()
   }
 
 
@@ -56,7 +60,7 @@ export class AdminZoneComponent implements OnInit {
       this.ms.tableCategory = e.tab.textLabel.toLowerCase();
     }
     if (this.ms.tableCategory === 'restaurants') {
-      this.getRestaurant(this.paginationSkipNumber)
+      this.getRestaurantsSkipList()
       this.headersColums = ["Name", "Image", "Chef", "Actions"];
 
     } else if (this.ms.tableCategory === 'chefs') {
@@ -89,9 +93,8 @@ export class AdminZoneComponent implements OnInit {
     }
   }
 
-  getRestaurant(paginationSkip: number) {
-
-    this.rs.getRestaurantsTable(paginationSkip).subscribe(
+  getRestaurantsSkipList() {
+    this.rs.getRestaurantsTable().subscribe(
       (res: any) => {
         if (!res) {
           throw new Error('res is undefined');
@@ -113,7 +116,7 @@ export class AdminZoneComponent implements OnInit {
         }
         console.log(res);
 
-        this.restaurantsNumber = res;
+        this.ms.restaurantsNumber = res;
       },
       (err: any) => {
         console.log(err);
@@ -123,13 +126,43 @@ export class AdminZoneComponent implements OnInit {
 
   paginationRestaurant(nav: string) {
     if (nav === 'next') {
-      this.paginationSkipNumber += 5
+      this.ms.paginationSkipNumber += 5
     } else {
-      this.paginationSkipNumber -= 5
+      this.ms.paginationSkipNumber -= 5
     }
-    this.getRestaurant(this.paginationSkipNumber)
-    console.log(this.paginationSkipNumber);
+    this.getRestaurantsSkipList()
+    console.log(this.ms.paginationSkipNumber);
   }
+  getAllRestaurants(){
+
+    this.rs.getRestaurants().subscribe(
+      (res: any) => {
+        if (!res) {
+          throw new Error('res is undefined');
+        }
+        this.rs.allRestaurantsList = res;
+        console.log(this.rs.allRestaurantsList);
+      },
+      (err: any) => {
+        console.log(err);
+      }
+      );
+    }
+
+    getAllChefs(){
+      this.cs.getChefs().subscribe(
+        (res: any) => {
+          if (!res) {
+            throw new Error('res is undefined');
+          }
+          this.cs.allChefsList  = res;
+        },  
+        (err: any) => {
+          console.log(err);
+        }
+        );
+      }
+
 
 
 
