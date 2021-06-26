@@ -31,8 +31,20 @@ export class MainService {
 
   baseUrl: string = "http://localhost:3000/users/"
 
+  adminLoggedIn = false
+
   Login(body: any) {  
     return this.http.post( this.baseUrl + 'login', body) 
+  }
+
+  // adminLogged() {  
+  //   return this.http.get( this.baseUrl + 'adminAuth'),
+  //   {headers: { 'Authorization':localStorage.token }}
+  // }
+
+  adminLogged() {  
+    return this.http.get( this.baseUrl + `adminAuth`,
+    {headers: { 'Authorization':localStorage.token }}) 
   }
 
 

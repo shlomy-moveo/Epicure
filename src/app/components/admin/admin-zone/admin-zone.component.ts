@@ -33,6 +33,7 @@ export class AdminZoneComponent implements OnInit {
 
   ngOnInit(): void {
     this.ms.adminZone = true;
+    
     // for pagintion
     this.getRestaurantsSkipList()
     this.getRestaurantsLength()
@@ -106,6 +107,8 @@ export class AdminZoneComponent implements OnInit {
       }
     );
   }
+
+
 
   getRestaurantsLength() {
 

@@ -37,6 +37,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogComponent } from './components/admin/dialog/dialog.component';
 import { DeleteDialogComponent } from './components/delete-dialog/delete-dialog.component';
 import { EditDialogComponent } from './components/edit-dialog/edit-dialog.component';
+import { AuthGuard } from './auth/auth.guard';
+import { AuthService } from './auth/auth.service';
 // import { AuthGuard } from './auth.guard';
 // import { AuthService } from './services/auth.service';
 
@@ -85,8 +87,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
 
   ],
   providers: [
-    // AuthGuard,
-    // AuthService,
+    AuthGuard,
+    AuthService,
     {
       provide: SWIPER_CONFIG,
       useValue: DEFAULT_SWIPER_CONFIG,
