@@ -19,7 +19,7 @@
             <li  *ngFor="let res of item.restaurants">{{ res.name }}</li>    
           </ul> 
         </td>
-        <td *ngIf="item.price">{{ item.price }}</td>
+        <td *ngIf="item.price" class="price">{{ item.price }}</td>
         <td *ngIf="item.ingredients">
           <ul  >
             <li  *ngFor="let ingredient of item.ingredients">{{ ingredient }}</li>    

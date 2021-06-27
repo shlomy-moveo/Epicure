@@ -71,7 +71,8 @@ body{
 font-size: x-large;
 font-family: $font-stack;
 text-align: center;
-margin:18px 0;}
+margin-top:15px;
+margin-bottom: 11px;}
 
 .style-snackbar{
   background-color: grey;
@@ -80,6 +81,12 @@ margin:18px 0;}
     color: white !important;
 }
 
+}
+
+app-admin-zone{
+  .mat-focus-indicator .mat-raised-button .mat-button-base .mat-primary{
+    width:13%;
+  }
 }
 
 

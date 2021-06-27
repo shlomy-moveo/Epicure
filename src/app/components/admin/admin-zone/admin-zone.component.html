@@ -5,24 +5,24 @@
 </mat-tab-group>
 
 
-<button mat-fab color="primary" (click)="openDialog()">
-    <mat-icon>add</mat-icon>
-</button>
-
-    <div class="button-row">
-        <button mat-button color="primary" [disabled]="this.ms.tableCategory != 'restaurants' || this.ms.paginationSkipNumber<=0"
-            (click)="paginationRestaurant('previous')">
-            << previous page </button>
-
-        <button mat-button color="primary"
-        [disabled]="this.ms.tableCategory != 'restaurants' || this.ms.restaurantsNumber<=this.ms.paginationSkipNumber+5"
-            (click)="paginationRestaurant('next')">
-            next page >>
-        </button>
-
-    </div>
-
-
+<button mat-raised-button color="primary" (click)="openDialog()">
+   Add
+    <!-- <mat-icon>add</mat-icon> -->
+</button> 
 
 
 <app-result-table [tableData]="this.ms.tableList" [headersColums]="headersColums"></app-result-table>
+
+<div class="button-row">
+    <button mat-button color="primary" [disabled]="this.ms.tableCategory != 'restaurants' || this.ms.paginationSkipNumber<=0"
+        (click)="paginationRestaurant('previous')">
+        << previous page </button>
+
+    <button mat-button color="primary"
+    [disabled]="this.ms.tableCategory != 'restaurants' || this.ms.restaurantsNumber<=this.ms.paginationSkipNumber+5"
+        (click)="paginationRestaurant('next')">
+        next page >>
+    </button>
+
+</div>
+

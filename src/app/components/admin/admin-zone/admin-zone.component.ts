@@ -10,6 +10,7 @@ import { DialogComponent } from '../dialog/dialog.component';
 import { ChefsService } from 'src/app/services/chefs.service';
 import { DishesService } from 'src/app/services/dishes.service';
 import { MainService } from 'src/app/services/main.service';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-admin-zone',
@@ -25,6 +26,7 @@ export class AdminZoneComponent implements OnInit {
 
 
   constructor(
+    public authService: AuthService,
     public ms: MainService,
     public ds: DishesService,
     public cs: ChefsService,
@@ -98,11 +100,13 @@ export class AdminZoneComponent implements OnInit {
     this.rs.getRestaurantsTable().subscribe(
       (res: any) => {
         if (!res) {
+          this.authService.updateLoggedIn(false)
           throw new Error('res is undefined');
         }
         this.ms.tableList = res;
       },
       (err: any) => {
+        this.authService.updateLoggedIn(false)
         console.log(err);
       }
     );
@@ -144,7 +148,6 @@ export class AdminZoneComponent implements OnInit {
           throw new Error('res is undefined');
         }
         this.rs.allRestaurantsList = res;
-        console.log(this.rs.allRestaurantsList);
       },
       (err: any) => {
         console.log(err);
