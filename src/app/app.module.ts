@@ -3,7 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms'; 
 import { FormsModule } from '@angular/forms';
-
+import { Amplify } from '@aws-amplify/core'
+// import Amplify ,{Auth} from 'aws-amplify';    
+// import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
+// import Amplify from 'aws-amplify';
+// import awsconfig from '../aws-exports';
+  
 
 
 import { AngularMaterialModule } from './modules/angular-material.module';
@@ -39,6 +44,7 @@ import { DeleteDialogComponent } from './components/delete-dialog/delete-dialog.
 import { EditDialogComponent } from './components/edit-dialog/edit-dialog.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AuthService } from './auth/auth.service';
+
 // import { AuthGuard } from './auth.guard';
 // import { AuthService } from './services/auth.service';
 
@@ -49,6 +55,16 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
   slidesPerView: 'auto'
 };
+
+Amplify.configure({
+  Auth:{
+    mandatorySignIn:true,
+    region: 'us-east-2',
+    userPoolId: 'us-east-2_RiCWhbgKm',
+    userPoolWebClientId: '1sv961re5o64jg46lombo2r5p',
+    authenticationFlowType:'USER_PASSWORD_AUTH'
+  }
+})
 
 @NgModule({
   declarations: [
@@ -83,7 +99,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ReactiveFormsModule,
     FormsModule,
     AngularMaterialModule,  
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
 
   ],
   providers: [

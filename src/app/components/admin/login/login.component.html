@@ -2,8 +2,8 @@
     <form class="form-signin" [formGroup]="loginForm" (ngSubmit)="handleSubmit()">
         <img class="mb-4" src="assets/about-logo.png" alt="" width="72" height="72">
         <h1 class="h4 mb-3 font-weight-normal">Please sign in</h1>
-        <input  formControlName="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <input  formControlName="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input [(ngModel)]="username" formControlName="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <input [(ngModel)]="password" formControlName="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
         <div class="checkbox mb-3">
 
         </div>
@@ -12,6 +12,7 @@
             <div class="alert alert-warning" role="alert" *ngIf="errorMsg" > 
                 {{errorMsg}}
             </div>  
+            <button (click)="loginWithCognito()" class="btn btn-primary btn-block" type="button"> Log In Cognito</button>
         </div>
            
         <p class="mt-5 mb-3 text-muted">&copy; Epicure 2021</p>

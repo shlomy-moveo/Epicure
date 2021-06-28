@@ -4,6 +4,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MainService } from 'src/app/services/main.service';
 import jwtDecode from 'jwt-decode';
 import { Router } from '@angular/router';
+import Auth from '@aws-amplify/auth';
+
+
 
 
 
@@ -21,6 +24,10 @@ export class LoginComponent implements OnInit {
     private r:Router
 
   ) {}
+
+  username: string = '';
+    password: string = '';
+  
 
   loginForm:FormGroup = this.fb.group({
     email: ['', Validators.required],
@@ -60,5 +67,38 @@ export class LoginComponent implements OnInit {
       }else{
         this.r.navigateByUrl('/')
     }  }
+
+
+  async loginWithCognito() {
+
+    try {
+      let user = await Auth.signIn(this.username, this.password);
+      console.log('Authentication performed for user=' + this.username + 'password=' + this.password + ' login result==' + user);
+     console.log(user)
+
+//      if (user.challengeName === 'NEW_PASSWORD_REQUIRED') {
+//       Auth.completeNewPassword(user, '12345678')
+//            .then(user => {
+//            });
+// }
+
+      let tokens = user.signInUserSession;
+      console.log(tokens)
+
+      if (tokens != null) {
+
+        console.log('User authenticated');
+
+
+        this.r.navigate(['admin/admin-zone']);
+
+        alert('You are logged in successfully !');
+      }
+    } catch (error) {
+      console.log(error);
+      console.log('User Authentication failed');
+    }
+  }
+    
 
 }
