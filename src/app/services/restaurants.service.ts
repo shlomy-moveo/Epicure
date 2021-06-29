@@ -29,8 +29,9 @@ export class RestaurantsService {
   }
 
   getRestaurantsTable() {  
-    return this.http.get( this.baseUrl + `getAdminTableRestaurants?skip=${this.ms.paginationSkipNumber}&limit=5`,
-    {headers: { 'Authorization':localStorage.token }}) 
+    return this.http.get( this.baseUrl + `getAdminTableRestaurants?skip=${this.ms.paginationSkipNumber}&limit=5`
+    // ,{headers: { 'Authorization':localStorage.token }}
+    ) 
   }
 
 

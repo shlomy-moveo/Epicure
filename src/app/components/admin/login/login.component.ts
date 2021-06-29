@@ -81,7 +81,7 @@ export class LoginComponent implements OnInit {
 //            .then(user => {
 //            });
 // }
-
+      
       let tokens = user.signInUserSession;
       console.log(tokens)
 
@@ -89,6 +89,7 @@ export class LoginComponent implements OnInit {
 
         console.log('User authenticated');
 
+        localStorage.CognitoToken = tokens.accessToken.jwtToken
 
         this.r.navigate(['admin/admin-zone']);
 

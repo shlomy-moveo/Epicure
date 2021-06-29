@@ -99,14 +99,16 @@ export class AdminZoneComponent implements OnInit {
   getRestaurantsSkipList() {
     this.rs.getRestaurantsTable().subscribe(
       (res: any) => {
+        console.log("check"+ res);
+        
         if (!res) {
-          this.authService.updateLoggedIn(false)
+          // this.authService.updateLoggedIn(false)
           throw new Error('res is undefined');
         }
         this.ms.tableList = res;
       },
       (err: any) => {
-        this.authService.updateLoggedIn(false)
+        // this.authService.updateLoggedIn(false)
         console.log(err);
       }
     );
