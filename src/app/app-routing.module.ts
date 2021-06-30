@@ -7,8 +7,9 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
 
 const routes: Routes = [
   {path:"admin", component:LoginComponent},
-  {path:"admin/admin-zone", component:AdminZoneComponent,
-canActivate : [AuthGuard]},
+  {path:"admin/admin-zone", component:AdminZoneComponent
+  // ,canActivate : [AuthGuard]
+} ,
   {path:"", pathMatch:"full", component:HomepageComponent}
 ];
 

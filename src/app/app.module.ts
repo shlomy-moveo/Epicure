@@ -104,8 +104,8 @@ Amplify.configure({
 
   ],
   providers: [
-    AuthGuard,
-    AuthService,
+    // AuthGuard,
+    // AuthService,
     {
       provide: SWIPER_CONFIG,
       useValue: DEFAULT_SWIPER_CONFIG,

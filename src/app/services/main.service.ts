@@ -15,27 +15,29 @@ export class MainService {
 
   ) { }
 
-  adminZone: Boolean = false
+  cognitoUser: any;
 
-  loggedUser : any
+  adminZone: Boolean = false;
+
+  loggedUser : any;
 
   tableList: Restaurant[] | Chef[] | Dish[] | undefined;
-  tableCategory = 'restaurants'
+  tableCategory = 'restaurants';
 
   // tableList: any;
 
-  paginationSkipNumber = 0
-  restaurantsNumber = 0
+  paginationSkipNumber = 0;
+  restaurantsNumber = 0;
 
 
 
-  baseUrl: string = "http://localhost:3000/users/"
+  baseUrl: string = "http://localhost:3000/users/";
 
-  adminLoggedIn = false
+  adminLoggedIn = false;
 
   Login(body: any) {  
     return this.http.post( this.baseUrl + 'login', body) 
-  }
+  };
 
   // adminLogged() {  
   //   return this.http.get( this.baseUrl + 'adminAuth'),

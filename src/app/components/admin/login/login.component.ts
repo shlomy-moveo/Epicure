@@ -74,7 +74,8 @@ export class LoginComponent implements OnInit {
     try {
       let user = await Auth.signIn(this.username, this.password);
       console.log('Authentication performed for user=' + this.username + 'password=' + this.password + ' login result==' + user);
-     console.log(user)
+      console.log(user)
+      localStorage.cognitoClientId = user.pool.clientId
 
 //      if (user.challengeName === 'NEW_PASSWORD_REQUIRED') {
 //       Auth.completeNewPassword(user, '12345678')
@@ -89,7 +90,8 @@ export class LoginComponent implements OnInit {
 
         console.log('User authenticated');
 
-        localStorage.CognitoToken = tokens.accessToken.jwtToken
+        localStorage.CognitoUserAccessToken = tokens.accessToken.jwtToken;
+        localStorage.CognitoRefrashToken = tokens.refreshToken.token;
 
         this.r.navigate(['admin/admin-zone']);
 
@@ -98,6 +100,9 @@ export class LoginComponent implements OnInit {
     } catch (error) {
       console.log(error);
       console.log('User Authentication failed');
+      this.errorMsg = error.message
+      setTimeout(()=>{ this.errorMsg =''}, 2500);
+
     }
   }
     
