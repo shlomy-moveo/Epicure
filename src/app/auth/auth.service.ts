@@ -37,6 +37,5 @@ export class AuthService {
   }
 
 
-  // for cognito token
   
 }

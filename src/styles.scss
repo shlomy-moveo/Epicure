@@ -68,11 +68,18 @@ body{
 
 
 .mat-tab-body-content{
-font-size: x-large;
+font-size: xx-large;
 font-family: $font-stack;
 text-align: center;
+padding-top: 5px;
 margin-top:15px;
-margin-bottom: 11px;}
+margin-bottom: 19px;
+overflow: hidden !important;
+}
+
+.mat-raised-button{
+  margin-left: 13%;
+}
 
 .style-snackbar{
   background-color: grey;
@@ -83,11 +90,11 @@ margin-bottom: 11px;}
 
 }
 
-app-admin-zone{
-  .mat-focus-indicator .mat-raised-button .mat-button-base .mat-primary{
-    width:13%;
-  }
-}
+// app-admin-zone{
+//   .mat-focus-indicator .mat-raised-button .mat-button-base .mat-primary{
+//     width:12%;
+//   }
+// }
 
 
 

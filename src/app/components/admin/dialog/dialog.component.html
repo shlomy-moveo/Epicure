@@ -1,6 +1,7 @@
 <div class="wrapper">
-  <!-- <h2 mat-dialog-title>Add  {{ category }}</h2>
-  <div class="form">
+  <h2 mat-dialog-title>   Add new {{this.ms.tableCategory != 'dishes' ? this.ms.tableCategory.slice(0,this.ms.tableCategory.length -1) : this.ms.tableCategory.slice(0,4)}}
+</h2>
+  <!-- <div class="form">
     <mat-form-field appearance="fill">
       <mat-label>Select Category</mat-label>
       <mat-select (valueChange)="changeCategory($event)">

@@ -70,12 +70,14 @@ export class AdminZoneComponent implements OnInit {
       this.cs.getChefs().subscribe(
         (res: any) => {
           if (!res) {
+            this.authService.updateLoggedIn(false)
             throw new Error('res is undefined');
           }
           this.ms.tableList = res;
           this.headersColums = ["Name", "Image", "Description", "Restaurants", "Actions"]
         },
         (err: any) => {
+          this.authService.updateLoggedIn(false)
           console.log(err);
         }
       );
@@ -84,12 +86,14 @@ export class AdminZoneComponent implements OnInit {
       this.ds.getDishes().subscribe(
         (res: any) => {
           if (!res) {
+            this.authService.updateLoggedIn(false)
             throw new Error('res is undefined');
           }
           this.ms.tableList = res;
           this.headersColums = ["Name", "Image", "Restaurant", "Price", "Ingredients", "Actions"]
         },
         (err: any) => {
+          this.authService.updateLoggedIn(false)
           console.log(err);
         }
       );
@@ -98,17 +102,15 @@ export class AdminZoneComponent implements OnInit {
 
   getRestaurantsSkipList() {
     this.rs.getRestaurantsTable().subscribe(
-      (res: any) => {
-        console.log("check"+ res);
-        
+      (res: any) => {        
         if (!res) {
-          // this.authService.updateLoggedIn(false)
+          this.authService.updateLoggedIn(false)
           throw new Error('res is undefined');
         }
         this.ms.tableList = res;
       },
       (err: any) => {
-        // this.authService.updateLoggedIn(false)
+        this.authService.updateLoggedIn(false)
         console.log(err);
       }
     );

@@ -104,17 +104,17 @@ Amplify.configure({
 
   ],
   providers: [
-    // AuthGuard,
-    // AuthService,
+    AuthGuard,
+    AuthService,
     {
       provide: SWIPER_CONFIG,
       useValue: DEFAULT_SWIPER_CONFIG,
     },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: InterceptorService,
-      multi: true
-  }
+  //   {
+  //     provide: HTTP_INTERCEPTORS,
+  //     useClass: InterceptorService,
+  //     multi: true
+  // }
 
 
 

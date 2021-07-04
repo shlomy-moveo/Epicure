@@ -21,7 +21,9 @@ export class RestaurantsService {
 
     
   getRestaurants() {  
-    return this.http.get( this.baseUrl + 'getRestaurants') 
+    return this.http.get( this.baseUrl + 'getRestaurants' 
+    ,{headers: { 'Authorization':localStorage.token }}
+    )
   }
 
   getRestaurantsLength() {  
@@ -30,7 +32,7 @@ export class RestaurantsService {
 
   getRestaurantsTable() {  
     return this.http.get( this.baseUrl + `getAdminTableRestaurants?skip=${this.ms.paginationSkipNumber}&limit=5`
-    // ,{headers: { 'Authorization':localStorage.token }}
+    ,{headers: { 'Authorization':localStorage.token }}
     ) 
   }
 
